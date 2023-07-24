@@ -1,0 +1,15 @@
+button{
+    border: none;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+img{
+    display: block;
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    
+}
