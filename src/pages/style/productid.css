@@ -1,0 +1,9 @@
+.ProductId_description{
+    padding: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    gap: 8em;
+    margin: auto;
+}

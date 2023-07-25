@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './style/productinfo.css'
 
 const ProductIdInfo = ({product}) => {
 
@@ -16,24 +17,27 @@ const ProductIdInfo = ({product}) => {
 
 
   return (
-    <section>
-     <h3>{product?.brand}</h3>
-     <h2>{product?.title}</h2>
-     <p>{product?.description}</p>
-     <footer>
-        <div>
-            <span>Price</span>
-            <span>{product?.price}</span>
+    <section className='ProductInfo'>
+     <h3 className='ProductInfo_brand'>{product?.brand}</h3>
+     <h2 className='ProductInfo_title'>{product?.title}</h2>
+     <p className='ProductInfo_description'>{product?.description}</p>
+     <footer className='ProductInfo_footer'>
+        <div className='ProductInfo_purchase'>
+               <div className='ProductInfo_efect'>
+            <span className='ProductInfo_subprice'>Price</span>
+            <span className='ProductInfo_price'>${product?.price}</span>
         </div>
-        <div>
-            <span>Quantity</span>
-            <div>
-                <button onClick={handelReset}>-</button>
-                <div>{quantity}</div>
-                <button onClick={handelAdd}>+</button>
+        <div className='ProductInfo_quantity'>
+            <span className='ProductInfo_subprice'>Quantity</span>
+            <div className='ProductInfo_counter'>
+                <button className='ProductInfo_reset' onClick={handelReset}>-</button>
+                <div className='ProductInfo_uni'>{quantity}</div>
+                <button className='ProductInfo_add' onClick={handelAdd}>+</button>
             </div>
         </div>
-        <button>Add to cart <i className='bx bxs-cart-download'></i></button>
+        </div>
+     
+        <button className='ProductInfo_button'>Add to cart <i className='bx bxs-cart-download'></i></button>
      </footer>
     </section>
   )
