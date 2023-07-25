@@ -24,7 +24,7 @@ const ProductInCart = ({prodCart}) => {
         <span>{prodCart.quantity}</span>
         <div>
           <span>Subtotal</span>
-          <span>{prodCart.product.price}</span>
+          <span>{prodCart.product.price * prodCart.quantity}</span>
         </div>
       </footer>
 
