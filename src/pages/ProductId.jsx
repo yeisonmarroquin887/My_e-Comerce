@@ -17,6 +17,8 @@ const ProductId = () => {
     getProductById();
   }, []);
 
+
+  
   return (
     <div className="ProductId">
       <div className="ProductId_description">

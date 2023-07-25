@@ -1,4 +1,13 @@
 .ProductId_description{
+    padding: 1em;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    gap: em;
+    margin: auto;
+}
+@media (min-width:800px) {
+    .ProductId_description{
     padding: 2em;
     display: flex;
     align-items: center;
@@ -6,4 +15,5 @@
     max-width: 1000px;
     gap: 8em;
     margin: auto;
+}
 }

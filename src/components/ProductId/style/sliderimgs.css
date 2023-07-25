@@ -1,4 +1,9 @@
 .sliderimgs{
+    width: 100%;
+}
+@media (min-width:800px) {
+    .sliderimgs{
     width: 180em;
 
+}
 }

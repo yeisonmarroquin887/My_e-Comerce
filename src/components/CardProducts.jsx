@@ -1,13 +1,25 @@
 import React from "react";
 import  '../components/style/cardproduct.css'
 import { useNavigate } from "react-router-dom";
+import useCrudCart from "../hooks/useCrudCart";
 
 const CardProducts = ({ product }) => {
 
   const navigate = useNavigate()
+  const { addProductToCart } = useCrudCart()
 
   const HandelSelectProduct = () => {
          navigate(`/product/${product.id}`)
+  }
+
+  const handleBtnClick = e => {
+    e.stopPropagation()
+    const data = {
+      quantity: 1,
+      productId: product.id
+    }
+    addProductToCart(data)
+    
   }
   
   return (
@@ -25,8 +37,8 @@ const CardProducts = ({ product }) => {
           <span className="CardProduct_price-label">Price</span>
           <span className="CardProduct_price-value">{product.price}</span>
         </div>
-        <button className="CardProduct_btn">
-        <i class='bx bxs-cart'></i>
+        <button onClick={handleBtnClick} className="CardProduct_btn">
+        <i className='bx bxs-cart'></i>
         </button>
         </div>
     
