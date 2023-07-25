@@ -1,6 +1,6 @@
 .CardProduct{
     width: 100%;
-    max-width: 320px;
+    max-width: 280px;
     border: 1px solid  #ccca;
     background-color: white;
     transition: transform 200ms ease;
@@ -64,7 +64,7 @@
 }
 .CardProduct_btn{
     color: white;
-    background-color: #f85555;
+    background-color: #08B5C0;
     width: 40px;
     aspect-ratio: 1;
     border-radius: 50%;

@@ -1,0 +1,7 @@
+.Home{
+    padding: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3em;
+    justify-content: center;
+}
