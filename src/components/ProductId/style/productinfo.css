@@ -30,16 +30,41 @@
 .ProductInfo_reset{
     border: 1px solid rgb(202, 200, 200);
     cursor: pointer;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 1.5em;
+}
+.ProductInfo_reset:hover{
+   background-color: #08B5C0;
+   color: white;
 }
 .ProductInfo_uni{
     border: 1px solid rgb(202, 200, 200);
     width: 2em;
     text-align: center;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 .ProductInfo_add{
     border: 1px solid rgb(202, 200, 200);
     cursor: pointer;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 1.5em;
 }
+.ProductInfo_add:hover{
+    background-color: #08B5C0;
+    color: white;
+ }
 .ProductInfo_button{
     background-color: #08B5C0;
     color: white;

@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom'
+import { Route, Router, Routes } from 'react-router-dom'
 import './App.css'
 import Home from './pages/Home'
 import { useDispatch } from 'react-redux'
@@ -9,6 +9,7 @@ import ProductId from './pages/ProductId'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
+import Purchases from './pages/Purchases'
 
 function App() {
  const dispath = useDispatch()
@@ -29,6 +30,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/product/:id' element={<ProductId/>}/>
         <Route path='/cart' element={<Cart/>}/>
+        <Route path='/purchases' element={<Purchases/>}/>
         
       </Routes>
     </div>

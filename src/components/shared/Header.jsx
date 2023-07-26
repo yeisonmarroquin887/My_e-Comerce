@@ -10,7 +10,7 @@ const Header = () => {
             <ul className='Header_ul'>
                 <li className='Header_li'> <Link to='/login'>Login</Link> </li>
                 <li className='Header_li'> <Link to='/register'>Register</Link> </li>
-                <li className='Header_li'> <Link to='/'>Purchases</Link> </li>
+                <li className='Header_li'> <Link to='/purchases'>Purchases</Link> </li>
                 <li className='Header_li'> <Link to='/cart'>Cart</Link> </li>
             </ul>
         </nav>
