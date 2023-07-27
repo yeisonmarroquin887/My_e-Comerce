@@ -24,7 +24,7 @@ const Register = () => {
             <div>
               <div className="Register_div">
                 <label className="Register_label" htmlFor="firstName">
-                  First Name
+                  Nombres
                 </label>
                 <input
                   className="Register_input"
@@ -35,7 +35,7 @@ const Register = () => {
               </div>
               <div className="Register_div">
                 <label className="Register_label" htmlFor="lastName">
-                  Last Name
+                  Apellidos
                 </label>
                 <input
                   className="Register_input"
@@ -50,7 +50,7 @@ const Register = () => {
             <div>
               <div className="Register_div">
                 <label className="Register_label" htmlFor="email">
-                  Email
+                  Correo Electronico
                 </label>
                 <input
                   className="Register_input"
@@ -61,7 +61,7 @@ const Register = () => {
               </div>
               <div className="Register_div">
                 <label className="Register_label" htmlFor="password">
-                  Password
+                  Contraseña
                 </label>
                 <input
                   className="Register_input"
@@ -76,7 +76,7 @@ const Register = () => {
           <div>
             <div className="Register_div">
               <label className="Register_label" htmlFor="phone">
-                Phone
+                Teléfono(10 caracteres)
               </label>
               <input
                 className="Register_input"
@@ -86,9 +86,9 @@ const Register = () => {
               />
             </div>
             <div className="fin">
-              <button className="Register_btn">Register</button>
-              <span>
-                ¿Ya tienes una cuenta? <Link to="/login">Acceso</Link>{" "}
+              <button className="Register_btn">Registrar</button>
+              <span className="register_span">
+                ¿Ya tienes una cuenta? <Link className="register_link" to="/login">Acceso</Link>{" "}
               </span>
             </div>
           </div>

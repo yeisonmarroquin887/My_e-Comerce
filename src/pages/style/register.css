@@ -4,7 +4,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 0em;
+    margin-top: -1em;
 }
 .Register_title{
     color: #08B5C0;
@@ -51,6 +51,12 @@
 }
 .fin{
     display: grid;
+}
+.register_span{
+    color: #999;
+}
+.register_link{
+    color: #08B5C0;
 }
 @media (min-width: 700px) {
     .Register{

@@ -3,5 +3,16 @@
     display: flex;
     align-items: center;
     padding: 0em 2em;
+    gap: 10%;
+}
+.Header_ul{
+    display: flex;
+    gap: 4em;
+    width: 195%;
+    justify-content: end;
+    padding: 1em;
+}
+.Header_li{
+    color: white;
 }
 

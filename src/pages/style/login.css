@@ -43,6 +43,13 @@
     color: white;
     margin-bottom: 2em;
 }
+.Login_span{
+   margin-top: 40em;
+   color: #999;
+}
+.login_link{
+    color: #08B5C0;
+}
 @media (min-width: 700px) {
     .Login{
         display: flex;
