@@ -24,6 +24,7 @@ const CardProducts = ({ product }) => {
   
   return (
             <article onClick={HandelSelectProduct} className="CardProduct">
+              
         <header className="CardProduct_header">
           <img className="CardProduct_img img1" src={product.images[0].url} alt="" />
           <img className="CardProduct_img img2" src={product.images[1].url} alt="" />
@@ -32,6 +33,7 @@ const CardProducts = ({ product }) => {
               <section className="CardProduct_setcion">
             <h4 className="CardProduct_subtitle">{product.brand}</h4>
             <h3 className="CardProduct_title">{product.title}</h3>
+            
         </section>
         <div className="CardProduct_price">
           <span className="CardProduct_price-label">Price</span>
@@ -40,6 +42,7 @@ const CardProducts = ({ product }) => {
         <button onClick={handleBtnClick} className="CardProduct_btn">
         <i className='bx bxs-cart'></i>
         </button>
+        
         </div>
     
       </article>

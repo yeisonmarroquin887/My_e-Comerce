@@ -1,5 +1,6 @@
 import React from 'react'
 import useAunthentication from '../hooks/useAunthentication'
+import './style/login.css'
 
 const Login = () => {
 
@@ -15,17 +16,26 @@ const Login = () => {
 
 
   return (
-    <form onSubmit={handleLogin}>
-        <div>
-            <label htmlFor="email">Email</label>
-            <input type="email" id='email'/>
+    <article className='Login'>
+      <div className='Login_img'>
+        <img className='Login_ing' src="../images/logo-color.png" alt="" />
+      </div>
+       <form onSubmit={handleLogin}>
+        <div className='Login_title'>
+          <h1>¡Bienvenido! Ingrese su correo electronico y contraseña para continuar.</h1>
         </div>
-        <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" id='password'/>
+        <div className='Login_div'>
+            <label className='Login_label' htmlFor="email">Email</label>
+            <input className='Login_input' type="email" id='email'/>
         </div>
-        <button>Sing in</button>
+        <div className='Login_div'>
+            <label className='Login_label' htmlFor="password">Password</label>
+            <input className='Login_input' type="password" id='password'/>
+        </div>
+        <button className='Login_bnt'>Sing in</button>
     </form>
+    </article>
+   
   )
 }
 

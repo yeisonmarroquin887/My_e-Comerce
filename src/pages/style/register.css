@@ -1,0 +1,103 @@
+.Register{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0em;
+}
+.Register_title{
+    color: #08B5C0;
+}
+.Register_inter{
+    box-shadow:
+    inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+    0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+    display: grid;
+    gap: 0em;
+    padding: 2em;
+    border-radius: 1em;
+}
+.Register_div{
+    display: grid;
+    gap: 0.5em;
+    margin-bottom: 1em;
+}
+.Register_label{
+    color: #999;
+}
+.Register_input{
+    border: .1px solid #999;
+    height: 2em;
+    border-radius: 10px;
+    text-align: center;
+}
+.Register_btn{
+    background-color: #08B5C0;
+    height: 3em;
+    border-radius: 10px;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    color: white;
+}
+.padre{
+    display: grid;
+    gap: 0em;
+}
+.regis{
+    display: grid;
+    gap: 0em;
+}
+.fin{
+    display: grid;
+}
+@media (min-width: 700px) {
+    .Register{
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 0em;
+    }
+    .Register_title{
+        color: #08B5C0;
+    }
+    .Register_inter{
+     display: grid;
+     gap:1em;
+    }
+    .Register_div{
+        display: grid;
+        margin-bottom: 1.5em;
+    }
+    .Register_label{
+        color: #999;
+        display: grid;
+        text-align: center;
+    }
+    .Register_input{
+        border: .1px solid #999;
+        height: 2em;
+        border-radius: 10px;
+        text-align: center;
+    }
+    .Register_btn{
+        background-color: #08B5C0;
+        height: 3em;
+        border-radius: 10px;
+        margin-bottom: 1em;
+    }
+    .padre{
+        display: flex;
+        gap: 2em;
+    }
+    .regis{
+        display: grid;
+        gap: 0em;
+    }
+    .fin{
+        display: grid;
+    }
+}

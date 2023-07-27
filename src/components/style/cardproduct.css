@@ -10,6 +10,12 @@
 .CardProduct:hover{
     transform: scale(1.03);
 }
+.menu{
+    background-color: aqua;
+    width: 20em;
+    height: 29em;
+    position: fixed;
+}
 .CardProduct_header{
     border-bottom: 1px solid #ccca;
     padding: 1.3em;
