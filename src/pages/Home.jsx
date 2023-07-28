@@ -3,11 +3,19 @@ import { useSelector } from 'react-redux'
 import CardProducts from '../components/CardProducts'
 import './style/home.css'
 import FilterCategory from '../components/Home/FilterCategory'
+import FilterByPrice from '../components/Home/FilterByPrice'
 
 const Home = () => {
    const {productsGlobal} = useSelector(state => state)
 
    const [InputValue, setInputValue] = useState('')
+
+   const [FromTo, setFromTo] = useState({
+    from:0,
+    to:Infinity
+   })
+
+
 
    const input = useRef()
 
@@ -17,7 +25,26 @@ const Home = () => {
 
    console.log(InputValue)
 
-   const ProductFilter = productsGlobal?.filter(prod => prod.title.toLowerCase().includes(InputValue))
+   const ProductFilter = productsGlobal
+   ?.filter(prod => prod.title.toLowerCase().includes(InputValue))
+    .filter(prod => {
+      const from = +FromTo.from
+      const to = +FromTo.to
+      const price = +prod.price
+      if(from && to){
+         return from >= price && price >= to
+      }
+      if(from && !to) {
+        return from <= price
+      }
+      if(!from && to){
+        return price <= to
+      }
+      if(!from && !to){
+        return true
+      }
+    })
+
    const [Cambio, setCambio] = useState(false)
 
    const handlefilters = () => {
@@ -44,6 +71,7 @@ const Home = () => {
           <i class='bx bx-chevrons-left'></i>
           </div>
           <FilterCategory/>
+          <FilterByPrice setFromTo={setFromTo}/>
         </div>
          {
         ProductFilter?.map(product => (

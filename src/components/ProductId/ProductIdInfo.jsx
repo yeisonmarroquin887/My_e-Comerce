@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './style/productinfo.css'
 import useCrudCart from '../../hooks/useCrudCart'
 
@@ -7,6 +7,7 @@ const ProductIdInfo = ({product}) => {
     const [quantity, setQuantity] = useState(1)
 
     const { addProductToCart } = useCrudCart()
+    console.log(addProductToCart.quantity)
 
     const handelAdd = () => {
         setQuantity(quantity + 1)
@@ -25,6 +26,7 @@ const ProductIdInfo = ({product}) => {
         }
         addProductToCart(data)
     }
+
 
   return (
     <section className='ProductInfo'>
