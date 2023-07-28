@@ -1,5 +1,19 @@
  @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
+ :root {
+    --white: rgb(167, 146, 245);
+    --light-white: rgb(223, 223, 241);
+    --red: red;
+    --orange: rgb(233, 11, 48);
+    --border-color: rgb(128, 128, 128);
+    --shadow-color: rgba(88, 88, 88, 0.493);
+    --grey-text-color: rgba(155, 155, 155, 0.872);
+    --black-text-color: rgb(35, 35, 35);
+    --position-index-first: 1000;
+    --position-index-second: 2000;
+    --position-index-third: 3000;
+    --position-index-fourth: 4000;
+}
 body{
     font-family: Yantramanav,sans-serif;;
 }

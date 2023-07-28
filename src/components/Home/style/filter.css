@@ -1,0 +1,15 @@
+.filter{
+    border-bottom: 1px solid #ccca;
+}
+.filter_name{
+    color: white;
+}
+.filter_li{
+    cursor: pointer;
+    margin-top: 1em;
+    text-align: center;
+    color: #6b6d67;
+}
+.filter_li:hover{
+    color: white;
+}

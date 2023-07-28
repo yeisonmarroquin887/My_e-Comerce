@@ -24,7 +24,7 @@ const CardProducts = ({ product }) => {
   
   return (
             <article onClick={HandelSelectProduct} className="CardProduct">
-              
+            
         <header className="CardProduct_header">
           <img className="CardProduct_img img1" src={product.images[0].url} alt="" />
           <img className="CardProduct_img img2" src={product.images[1].url} alt="" />

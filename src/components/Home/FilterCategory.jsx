@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import { getAllproductsThunk } from '../../store/slice/products.slice'
 import { useDispatch } from 'react-redux'
+import './style/filter.css'
 
 const FilterCategory = () => {
   const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/categories'
@@ -25,13 +26,13 @@ const FilterCategory = () => {
     }
 
   return (
-    <div>
-        <h3>Category</h3>
+    <div className='filter'>
+        <h3 className='filter_name'>Category</h3>
         <ul>
-            <li onClick={handleClickAllProducts}>All Products</li>
+            <li className='filter_li' onClick={handleClickAllProducts}>All Products</li>
            {
             apiInfo?.map(categories => (
-                <li onClick={() => handleCategories(categories.id)} key={categories.id}> {categories.name}</li>
+                <li className='filter_li' onClick={() => handleCategories(categories.id)} key={categories.id}> {categories.name}</li>
             ))
            } 
         </ul>
