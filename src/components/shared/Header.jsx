@@ -1,27 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './style/header.css'
 import Menu from '../Menu'
 
 const Header = () => {
 
- const navigate = useNavigate()
+
+  const [Close, setClose] = useState(true)
+
+  const handelClose = () => {
+    setClose(false)
+  }
+  const handelClosevol = () => {
+    setClose(true)
+  }
+
 
  
 
   return (
     <header className='Header'>
         <h1 className='Header_h1'><Link to='/'>E-Commerce </Link></h1>
-      
+         <div onClick={handelClose} className='Header_menu'>
+          <i class='bx bx-menu'></i>
+         </div>
+        
+        
+        
+        <nav className={`Header_nav ${Close && 'Header_close'}`}>
           
-        
-        
-        <nav className='Header_nav'>
             <ul className='Header_ul'>
-                <li className='Header_li'> <Link className='Header_li' to='/login'>Login</Link> </li>
-                <li className='Header_li'> <Link className='Header_li' to='/register'>Register</Link> </li>
-                <li className='Header_li'> <Link className='Header_li' to='/purchases'>Purchases</Link> </li>
-                <li className='Header_li'> <Link className='Header_li' to='/cart'>Cart</Link> </li>
+            <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/'>Inicio</Link> </li>
+                <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/login'>Login</Link> </li>
+                <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/purchases'>Purchases</Link> </li>
+                <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/cart'>Cart</Link> </li>
+                <li onClick={handelClosevol} className='Header_volver'>Volver</li>
             </ul>
         </nav>
     </header>
