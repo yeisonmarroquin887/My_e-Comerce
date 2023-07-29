@@ -5,6 +5,7 @@
     justify-content: center;
     gap: em;
     margin: auto;
+    margin-top: 5em;
 }
 @media (min-width:800px) {
     .ProductId_description{
@@ -15,5 +16,6 @@
     max-width: 1000px;
     gap: 2em;
     margin: auto;
+    margin-top: 7em;
 }
 }

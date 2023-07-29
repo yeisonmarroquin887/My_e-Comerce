@@ -10,6 +10,8 @@ import Register from './pages/Register'
 import Login from './pages/Login'
 import Cart from './pages/Cart'
 import Purchases from './pages/Purchases'
+import ProtectedRoutes from './components/ProtectedRoutes'
+import { useSetState } from 'react-use'
 
 function App() {
  const dispath = useDispatch()
@@ -17,9 +19,7 @@ function App() {
   dispath(getAllproductsThunk())
  },[])
 
-
-
-
+ const [token, setToken] = useSetState()
 
   return (
     <div className='App'>
@@ -29,8 +29,12 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/product/:id' element={<ProductId/>}/>
-        <Route path='/cart' element={<Cart/>}/>
+
+        <Route element={<ProtectedRoutes />}>
+               <Route path='/cart' element={<Cart/>}/>
         <Route path='/purchases' element={<Purchases/>}/>
+        </Route>
+   
         
       </Routes>
     </div>

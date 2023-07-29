@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllProductsCartThunk } from "../store/slice/cart.slice";
 import ProductInCart from "../components/Cart/ProductInCart";
@@ -14,7 +14,6 @@ const Cart = () => {
 
   const { cartsGlobal } = useSelector((state) => state);
   console.log(cartsGlobal);
-
   const totalPriceCart = cartsGlobal?.reduce((acc, cv) => acc + cv.quantity * cv.product.price, 0)
   console.log({totalPriceCart})
 
@@ -23,6 +22,7 @@ const Cart = () => {
   const handlePurchases = () => {
       buyThisCart()
   }
+  
 
   return (
     <div className="cart">
@@ -33,7 +33,7 @@ const Cart = () => {
       <div className="cart_container">
         {
         cartsGlobal?.map((prodCart) => (
-          <ProductInCart key={prodCart.id} prodCart={prodCart} />
+          <ProductInCart key={prodCart.id} prodCart={prodCart}  />
         ))
         }
       </div>

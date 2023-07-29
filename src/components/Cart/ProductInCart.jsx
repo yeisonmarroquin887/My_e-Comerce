@@ -6,17 +6,18 @@ import './style/productcart.css'
 const ProductInCart = ({prodCart}) => {
 
 
-  const { deleteProductFromCart } = useCrudCart()
+  const { deleteProductFromCart, addProductToCart } = useCrudCart()
   const handleDeleteCart = () => {
      deleteProductFromCart(prodCart.id)
   }
   
-  const [a, seta] = useState()
-  const [Counter, setCounter] = useState(prodCart.quantity)
-
+  const [priceincre, setpriceincre] = useState(prodCart.product.price * prodCart.quantity)
+   const { cartsGlobal } = useSelector((state) => state);
+  console.log();
+const [Counter, setCounter] = useState(cartsGlobal[0].quantity)
   const handleCounter = () => {
     setCounter( Counter + 1)
-    seta(cartsGlobal[0].product.price * Counter)
+    setpriceincre(cartsGlobal[0].product.price * Counter)
   }
   const handlemenus = () => {
     if(Counter > 0){
@@ -24,8 +25,9 @@ const ProductInCart = ({prodCart}) => {
     }
     
   }
-  const { cartsGlobal } = useSelector((state) => state);
-  console.log();
+ 
+  
+
 
   return (
     <article className='prodcart'>
@@ -38,15 +40,19 @@ const ProductInCart = ({prodCart}) => {
       <i className='prodcart_delete-icon bx bx-trash'></i>
       </button>
       <footer className='prodcart_footer'>
-        {/*<button className='prodcart_' onClick={handlemenus}>-</button>
-        <span className='prodcart_'>{Counter}</span>
-        <button className='prodcart_' onClick={handleCounter}>+</button>*/}
-        <span className='prodcart_quantity'>{prodCart.quantity}</span>
+        <div>
+              <button className='prodcart_quantity' onClick={handlemenus}>-</button>
+        <span className='prodcart_quantity'>{Counter}</span>
+        <button className='prodcart_quantity' onClick={handleCounter}>+</button>
+        </div>
+    
+        
         <div className='prodcart_subtotal'>
           <span className='prodcart_subtotal-label'>Subtotal</span>
-          <span className='prodcart_subtotal-value'>{prodCart.product.price * prodCart.quantity}</span>
+          <span className='prodcart_subtotal-value'>{prodCart.product.price * Counter}</span>
         </div>
       </footer>
+      
 
     </article>
   )
