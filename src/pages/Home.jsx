@@ -66,7 +66,6 @@ const Home = () => {
         <input className='Home_in' id='bus' ref={input} onChange={handleChange} type="text" />
       
       </div>
-      <Link to='updatepassword'>HJFRGIUER</Link>
       <div className='Home'>
         <div className={`Home_filter ${Cambio && 'Home_filter-close'}`}>
           <div onClick={handelVolver} className='Volver'>
