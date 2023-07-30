@@ -32,7 +32,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/product/:id' element={<ProductId/>}/>
         <Route path='/reset_password' element={<RecoverPassword/>}/>
-        <Route path='/reset-password/:code' element={<UpdatePassword/>}/>
+        <Route path='/reset_password/:token' element={<UpdatePassword/>}/>
 
         <Route element={<ProtectedRoutes />}>
         <Route path='/logeado' element={<Logeado/>}/>
