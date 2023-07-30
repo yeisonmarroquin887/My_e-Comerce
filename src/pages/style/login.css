@@ -43,6 +43,7 @@
     border-radius: 10px;
     color: white;
     margin-bottom: 2em;
+    cursor: pointer;
 }
 .Login_span{
    margin-top: 40em;
