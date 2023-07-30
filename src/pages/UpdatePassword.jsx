@@ -3,6 +3,7 @@ import React from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import './style/updatePassword.css'
 
 const UpdatePassword = () => {
   const { token } = useParams();
@@ -27,17 +28,23 @@ const UpdatePassword = () => {
   };
 
   return (
-    <div>
-      <h1>Actualizar contraseña</h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label>
+    <div className='update'>
+        <div className='update_marco'>
+            <div className='update_priva'>
+               <i className='update_icon bx bxs-lock-open-alt'></i>
+      
+            </div>
+        
+      <form className='update_form' onSubmit={handleSubmit(onSubmit)}>
+                   <h1 className='update_h1'>Actualizar contraseña</h1> 
+              <label className='update_label'>
           Nueva contraseña:
-          <input type="password" {...register('password', { required: 'Este campo es requerido' })} />
+          <input className='update_input' type="password" {...register('password', { required: 'Este campo es requerido' })} />
         </label>
         {errors.password && <p>{errors.password.message}</p>}
-        <label>
+        <label className='update_label'>
           Confirmar contraseña:
-          <input
+          <input className='update_input'
             type="password"
             {...register('confirmPassword', {
               required: 'Este campo es requerido',
@@ -46,8 +53,12 @@ const UpdatePassword = () => {
           />
         </label>
         {errors.confirmPassword && <p>{errors.confirmPassword.message}</p>}
-        <button type="submit">Actualizar contraseña</button>
-      </form>
+        
+      
+        <button className='update_button' type="submit">Actualizar contraseña</button>
+      </form> 
+        </div>
+
     </div>
   );
 };
