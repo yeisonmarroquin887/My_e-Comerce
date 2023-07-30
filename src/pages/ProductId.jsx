@@ -5,11 +5,12 @@ import ProductIdInfo from "../components/ProductId/ProductIdInfo";
 import SliderImgs from "../components/ProductId/SliderImgs";
 import SimiliarProducts from "../components/ProductId/SimiliarProducts";
 import "./style/productid.css";
+const URL_BASE = import.meta.env.VITE_REACT_APP_URL
 
 const ProductId = () => {
   const { id } = useParams();
 
-  const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products/${id}`;
+  const url = `${URL_BASE}/products/${id}`;
 
   const [Product, getProductById] = useFetch(url);
 

@@ -12,7 +12,9 @@ const CardProducts = ({ product }) => {
          navigate(`/product/${product.id}`)
   }
 
-  const handleBtnClick = e => {
+  const purchaseSeguryti = (e) => {
+    if(localStorage.getItem('token')){
+       
     e.stopPropagation()
     const data = {
       quantity: 1,
@@ -20,14 +22,20 @@ const CardProducts = ({ product }) => {
     }
     addProductToCart(data)
     
+  
+    }else{
+      e.stopPropagation()
+      navigate('/login')
+    }
   }
+
   
   return (
             <article onClick={HandelSelectProduct} className="CardProduct">
             
         <header className="CardProduct_header">
-          <img className="CardProduct_img img1" src={product.images[0].url} alt="" />
-          <img className="CardProduct_img img2" src={product.images[1].url} alt="" />
+          <img className="CardProduct_img img1" src={product?.productImgs[0].url} alt={product.title} />
+          <img className="CardProduct_img img2" src={product?.productImgs[1].url} alt={product.title} />
         </header>
         <div className="CardProduct_body">
               <section className="CardProduct_setcion">
@@ -39,7 +47,7 @@ const CardProducts = ({ product }) => {
           <span className="CardProduct_price-label">Price</span>
           <span className="CardProduct_price-value">{product.price}</span>
         </div>
-        <button onClick={handleBtnClick} className="CardProduct_btn">
+        <button onClick={purchaseSeguryti} className="CardProduct_btn">
         <i className='bx bxs-cart'></i>
         </button>
         

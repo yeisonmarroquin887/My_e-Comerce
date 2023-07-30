@@ -32,7 +32,7 @@ const [Counter, setCounter] = useState(cartsGlobal[0].quantity)
   return (
     <article className='prodcart'>
       <header className='prodcart_header'>
-        <img className='prodcart_img' src={prodCart.product.images[0].url} alt="" />
+        <img className='prodcart_img' src={prodCart?.product.productImgs[0].url} alt="" />
       </header>
         <h3 className='prodcart_titl'>{prodCart.product.title}</h3>
       

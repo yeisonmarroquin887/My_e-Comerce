@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
+const URL_BASE = import.meta.env.VITE_REACT_APP_URL
 
 const ProductSlice = createSlice({
     name: 'products',
@@ -12,7 +13,7 @@ const ProductSlice = createSlice({
 export default ProductSlice.reducer
 export const {setProductsGlobal} = ProductSlice.actions
 
-export const getAllproductsThunk = (Url = "https://e-commerce-api-v2.academlo.tech/api/v1/products") => dispatch => {
+export const getAllproductsThunk = (Url = `${URL_BASE}/products`) => dispatch => {
     axios.get(Url)
     .then(res => dispatch(setProductsGlobal(res.data)))
     .catch(err => console.log(err))

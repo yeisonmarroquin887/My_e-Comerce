@@ -1,0 +1,46 @@
+.purcha{
+    display: grid;
+    grid-template-columns: 5em 1fr 3em 1em ;
+    gap: 1em;
+    align-items: center;
+    width: 100%;
+    max-width: 22em;
+    color:  rgba(41, 72, 73, 0.6);
+}
+.purcha_quantity{
+    border: 1px solid  #999;
+    text-align: center;
+    height: 1.5em;
+    width: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.purcha_total{
+    color: #08B5C0;
+    font-size: 1.1em;
+}
+@media (min-width:700px) {
+    .purcha{
+        display: grid;
+        grid-template-columns: 13em 3fr 4em 3em ;
+        gap: 4em;
+        align-items: center;
+        width: 100%;
+        max-width: 200em;
+        color:  rgba(41, 72, 73, 0.6);
+    }
+    .purcha_quantity{
+        border: 1px solid  #999;
+        text-align: center;
+        height: 1.5em;
+        width: 3em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .purcha_total{
+        color: #08B5C0;
+        font-size: 1.1em;
+    }
+}

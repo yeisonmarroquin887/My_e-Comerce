@@ -1,0 +1,55 @@
+.logeado{
+    background-color: #45989e;
+    color: white;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logeado_user{
+    background-color: #09a2adf5;
+    padding: 4em;
+    border: 2px solid white;
+    border-radius: 3em;
+}
+.logeado_title{
+    text-align: center;
+    color: #e1e4e4f5;
+}
+.logeado_name{
+    color: #3a325c;
+}
+.logeado_icon-father{
+    max-width: 500px;
+    height: 100%;
+    margin: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 10em;
+}
+.logeado_icon{
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.logeado_close{
+    background-color: rgb(186, 250, 250);
+    cursor: pointer;
+    width: 100%;
+    border-radius: 1em;
+    height: 5vh;
+    transition: transform 300ms ease;
+    color: rgb(6, 66, 119);
+    font-size: 1em;
+}
+.logeado_close:hover{
+    transform: scale(1.05);
+    filter: brightness(1.15);
+}

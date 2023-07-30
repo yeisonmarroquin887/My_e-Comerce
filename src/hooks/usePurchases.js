@@ -3,6 +3,7 @@ import getConfingToken from "../utils/getConfingToken"
 import { getAllProductsCartThunk } from "../store/slice/cart.slice"
 import { useDispatch } from "react-redux"
 import { useState } from "react"
+const URL_BASE = import.meta.env.VITE_REACT_APP_URL
 
 const usePurchases = () => {
 
@@ -11,7 +12,7 @@ const usePurchases = () => {
     const dispatch = useDispatch()
 
    const buyThisCart = () => {
-    const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases'
+    const url = `${URL_BASE}/purchase`
     axios.post(url, {}, getConfingToken())
     .then(res => {
         dispatch(getAllProductsCartThunk())
@@ -21,7 +22,7 @@ const usePurchases = () => {
    }
 
    const getAllProductsPurchase = () => {
-    const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases'
+    const url = `${URL_BASE}/purchase`
     axios.get(url, getConfingToken())
     .then(res => dispatch(setPurchases(res.data)))
     .catch(err => console.log(err))

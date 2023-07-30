@@ -23,7 +23,6 @@ const Home = () => {
      setInputValue(input.current.value.toLowerCase().trim())
    }
 
-   console.log(InputValue)
 
    const ProductFilter = productsGlobal
    ?.filter(prod => prod.title.toLowerCase().includes(InputValue))

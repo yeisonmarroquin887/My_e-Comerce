@@ -73,4 +73,13 @@
     margin-top: 2.4em;
     cursor: pointer;
     font-size: 1em;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cart_btnn{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
 }

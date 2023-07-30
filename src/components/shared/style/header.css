@@ -13,7 +13,17 @@
     align-items: center;
 }
 .Header_h1{
-    margin-left: 1em;
+    margin-left: 0em;
+    background-color: #24e9f7;
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+.header_img{
+    width: 100%;
+    max-width: 3em;
+    height: 100%;
 }
 
 .Header_nav{
@@ -60,7 +70,7 @@
 
 @media (min-width:800px) {
     .Header{
-        background-color: #08B5C0;
+        background-color: #07a9b4;
         display: flex;
         align-items: center;
         position: fixed;
@@ -68,13 +78,23 @@
         right: 0;
         width: 100%;
         z-index: var(--position-index-fourth);
-        height: 70px;
+        height: 75px;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
     .Header_h1{
-        margin-left: 3em;
+        margin-left: 0em;
+        background-color: #24e9f7;
+        width: 15%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .header_img{
+        width: 100%;
+        max-width: 3em;
+        height: 100%;
     }
     .Header_ul{
      width: 30em;;

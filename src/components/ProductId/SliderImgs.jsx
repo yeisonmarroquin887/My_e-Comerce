@@ -20,12 +20,14 @@ const [NumberImg, setNumberImg] = useState(0)
     }
   }
 
+  console.log(product)
+
   return (
     <div className='sliderimgs'>
       <button onClick={handlePreviouse} className='sliderimgs_arr slider_left'>&lt;</button>
       <div style={objStyle} className='sliderimgs_interior'>
         {
-        product?.images.map(image => (
+        product?.productImgs.map(image => (
           <div className='sliderimgs_img_container'>
             <img className='sliderimgs_img' key={image.id} src={image.url} alt="" />
           </div>

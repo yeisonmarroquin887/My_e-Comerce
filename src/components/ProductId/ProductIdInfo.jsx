@@ -49,7 +49,7 @@ const ProductIdInfo = ({product}) => {
         </div>
         </div>
      
-        <button onClick={handleAddToCart} className='ProductInfo_button'>Add to cart <i className='bx bxs-cart-download'></i></button>
+        <button onClick={handleAddToCart} className='ProductInfo_button'>Add to cart<i className='cart_btnn bx bxs-cart-download'></i></button>
      </footer>
     </section>
   )

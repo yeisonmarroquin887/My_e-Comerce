@@ -1,0 +1,15 @@
+.purchase{
+    display: grid;
+    margin-top: 5em;
+    gap: 3em;
+    justify-content: center;
+    text-align: center;
+}
+.purchase_title{
+    color: #08B5C0;
+}
+.purchase_product{
+    display: grid;
+    gap: 3em;
+    text-align: start;
+}

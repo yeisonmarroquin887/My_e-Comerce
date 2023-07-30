@@ -1,12 +1,13 @@
+import './style/productpurchases.css'
 
 const ProductPurchases = ({product}) => {
     console.log(product)
   return (
-    <article>
-    <img src={product.product.images[0].url} alt="" />
-    <h3>{product.product.title}</h3>
-    <span>{product.quantity}</span>
-    <span>{product.quantity * product.product.price}</span>
+    <article className="purcha">
+    <img className="purcha_img" src={product.product?.productImgs[0].url} alt="" />
+    <h3 className="purcha_title">{product.product.title}</h3>
+    <span className="purcha_quantity">{product.quantity}</span>
+    <span className="purcha_total">{product.quantity * product.product.price}</span>
     </article>
   )
 }

@@ -3,27 +3,30 @@ import useFetch from '../../hooks/useFetch'
 import { getAllproductsThunk } from '../../store/slice/products.slice'
 import { useDispatch } from 'react-redux'
 import './style/filter.css'
+const URL_BASE = import.meta.env.VITE_REACT_APP_URL
 
 const FilterCategory = () => {
-  const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/categories'
+  const url = `${URL_BASE}/categoris`
     const [apiInfo, getProductById] = useFetch(url)
 
     useEffect(() => {
       getProductById()
     }, [])
 
-    console.log(apiInfo)
+    
 
     const dispatch = useDispatch()
 
     const handleCategories = (id) => {
-        const url = `https://e-commerce-api-v2.academlo.tech/api/v1/products?categoryId=${id}`
+        const url = `${URL_BASE}/products?categoris=${id}`
         dispatch(getAllproductsThunk(url)) 
     } 
 
     const handleClickAllProducts = () => {
         dispatch(getAllproductsThunk())
     }
+
+    
 
   return (
     <div className='filter'>

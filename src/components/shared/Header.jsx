@@ -20,9 +20,9 @@ const Header = () => {
 
   return (
     <header className='Header'>
-        <h1 className='Header_h1'><Link to='/'>E-Commerce </Link></h1>
+        <h1 className='Header_h1'><Link to='/'> <img className='header_img' src="../images/logo_header.jpg" alt="" /> </Link></h1>
          <div onClick={handelClose} className='Header_menu'>
-          <i class='bx bx-menu'></i>
+          <i className='bx bx-menu'></i>
          </div>
         
         

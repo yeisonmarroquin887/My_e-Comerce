@@ -12,6 +12,7 @@ import Cart from './pages/Cart'
 import Purchases from './pages/Purchases'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import { useSetState } from 'react-use'
+import Logeado from './pages/Logeado'
 
 function App() {
  const dispath = useDispatch()
@@ -19,7 +20,6 @@ function App() {
   dispath(getAllproductsThunk())
  },[])
 
- const [token, setToken] = useSetState()
 
   return (
     <div className='App'>
@@ -31,6 +31,7 @@ function App() {
         <Route path='/product/:id' element={<ProductId/>}/>
 
         <Route element={<ProtectedRoutes />}>
+        <Route path='/logeado' element={<Logeado/>}/>
                <Route path='/cart' element={<Cart/>}/>
         <Route path='/purchases' element={<Purchases/>}/>
         </Route>

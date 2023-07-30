@@ -2,13 +2,14 @@ import axios from "axios"
 import getConfingToken from "../utils/getConfingToken"
 import { getAllProductsCartThunk } from "../store/slice/cart.slice"
 import { useDispatch } from "react-redux"
+const URL_BASE = import.meta.env.VITE_REACT_APP_URL
 
 const useCrudCart = () => {
 
    const dispatch =  useDispatch()
     
     const addProductToCart = (data) => {
-        const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart'
+        const url = `${URL_BASE}/cart`
         axios.post(url, data, getConfingToken())
         .then(res => {
            dispatch(getAllProductsCartThunk())
@@ -18,7 +19,7 @@ const useCrudCart = () => {
     }
      
     const deleteProductFromCart = (id) => {
-        const url = `https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`
+        const url = `${URL_BASE}/cart/${id}`
         axios.delete(url, getConfingToken())
         .then(res => {
             dispatch(getAllProductsCartThunk())
@@ -29,7 +30,7 @@ const useCrudCart = () => {
     }
 
     const updateProductInCart = (id, data) => {
-         const url = `https://e-commerce-api-v2.academlo.tech/api/v1/cart/${id}`
+         const url = `${URL_BASE}/cart/${id}`
          axios.put(url, data, getConfingToken())
          .then(res => {
             console.log(res.data)
