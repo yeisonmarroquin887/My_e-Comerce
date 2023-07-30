@@ -4,6 +4,7 @@ import CardProducts from '../components/CardProducts'
 import './style/home.css'
 import FilterCategory from '../components/Home/FilterCategory'
 import FilterByPrice from '../components/Home/FilterByPrice'
+import { Link } from 'react-router-dom'
 
 const Home = () => {
    const {productsGlobal} = useSelector(state => state)
@@ -55,6 +56,7 @@ const Home = () => {
 
   return  (
     <div className=''>
+    
       <div onClick={handlefilters} className='fil'> 
         <i className='bx bxs-filter-alt'> <samp className='name'>filters</samp></i>
       </div>
@@ -64,6 +66,7 @@ const Home = () => {
         <input className='Home_in' id='bus' ref={input} onChange={handleChange} type="text" />
       
       </div>
+      <Link to='updatepassword'>HJFRGIUER</Link>
       <div className='Home'>
         <div className={`Home_filter ${Cambio && 'Home_filter-close'}`}>
           <div onClick={handelVolver} className='Volver'>

@@ -13,6 +13,8 @@ import Purchases from './pages/Purchases'
 import ProtectedRoutes from './components/ProtectedRoutes'
 import { useSetState } from 'react-use'
 import Logeado from './pages/Logeado'
+import RecoverPassword from './pages/RecoverPassword'
+import UpdatePassword from './pages/UpdatePassword'
 
 function App() {
  const dispath = useDispatch()
@@ -29,6 +31,8 @@ function App() {
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/product/:id' element={<ProductId/>}/>
+        <Route path='/reset_password' element={<RecoverPassword/>}/>
+        <Route path='/reset-password/:code' element={<UpdatePassword/>}/>
 
         <Route element={<ProtectedRoutes />}>
         <Route path='/logeado' element={<Logeado/>}/>

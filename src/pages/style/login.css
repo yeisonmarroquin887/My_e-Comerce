@@ -51,6 +51,10 @@
 .login_link{
     color: #08B5C0;
 }
+.Login_olvidar{
+    color: #999;
+    text-align: center;
+}
 
 @media (min-width: 700px) {
     .Login{

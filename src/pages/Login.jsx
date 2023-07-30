@@ -50,7 +50,9 @@ const Login = () => {
         <div className='Login_div'>
             <label className='Login_label' htmlFor="password">Contraseña</label>
             <input className='Login_input' type="password" id='password'/>
+            <Link to='/reset_password' className='Login_olvidar'>¿Olvidaste tu Contraseña? </Link>
         </div>
+        
         
           <button className='Login_bnt'>Ingresar</button>
         
