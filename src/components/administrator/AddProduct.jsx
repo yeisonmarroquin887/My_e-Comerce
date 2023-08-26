@@ -1,6 +1,6 @@
 import CategoryAdd from "./productadd/CategoryAdd"
 import Image from "./productadd/Image"
-import Productadd from "./productadd/productadd"
+import Productadd from "./productadd/Productadd"
 
 
 const AddProduct = () => {
