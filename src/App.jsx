@@ -15,6 +15,9 @@ import { useSetState } from 'react-use'
 import Logeado from './pages/Logeado'
 import RecoverPassword from './pages/RecoverPassword'
 import UpdatePassword from './pages/UpdatePassword'
+import Inicio from './pages/Inicio'
+import LoginAdmin from './pages/LoginAdmin'
+import Administrator from './pages/Administrator'
 
 function App() {
  const dispath = useDispatch()
@@ -27,7 +30,10 @@ function App() {
     <div className='App'>
       <Header/>
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Inicio/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/loginadmin' element={<LoginAdmin/>}/>
+        <Route path='/administrator' element={<Administrator/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/product/:id' element={<ProductId/>}/>

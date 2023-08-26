@@ -1,0 +1,14 @@
+.Clientes{
+    background-color: rgb(97, 97, 218);
+    padding: 1em;
+    border-radius: 2em;
+}
+.compras{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+.compra{
+    background-color: aqua;
+    padding: 1em;
+}

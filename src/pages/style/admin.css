@@ -1,0 +1,11 @@
+.admin{
+    position: relative;
+}
+.clientes{
+    background-color: aqua;
+    
+}
+.cerrado{
+   height: 0;
+   opacity: 0;
+}
