@@ -1,5 +1,5 @@
 import CategoryAdd from "./productadd/CategoryAdd"
-import Image from "./productadd/image"
+import Image from "./productadd/Image"
 import Productadd from "./productadd/productadd"
 
 
