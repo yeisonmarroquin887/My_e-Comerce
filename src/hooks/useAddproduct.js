@@ -1,4 +1,4 @@
-import axios from "axios"
+/*import axios from "axios"
 import React from 'react'
 import getConfingToken from "../utils/getConfingToken"
 
@@ -12,5 +12,5 @@ return [creatProduct]
 }
 
 export default useAddproduct
-
+*/
 

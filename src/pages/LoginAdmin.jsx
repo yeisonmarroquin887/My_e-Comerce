@@ -1,7 +1,7 @@
 import React from "react";
 import Administrator from "./Administrator";
 import useAunthentication from "../hooks/useAunthentication";
-import './style/LoginAdmin.css'; // Agrega la importación de tu archivo CSS
+import './style/LoginAdmin.css'
 
 const LoginAdmin = () => {
   const handleLogin = (e) => {

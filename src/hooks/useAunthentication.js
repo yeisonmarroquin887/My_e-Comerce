@@ -18,13 +18,11 @@ const useAunthentication = () => {
     .then(res => {
         localStorage.setItem('token', res.data.token)
         localStorage.setItem('name', res.data.user.firstName)
-        console.log(res.data)
+        setUser(res.data)
     })
-    .catch(err => {
-        localStorage.removeItem('token')
-        console.log(err)
-    })
+    .catch(err => console.log(err))
   }; 
+  console.log(user)
 
   const createNewAdmin = (data) => {
     const url = 'https://ecomereceapi.onrender.com/api/v1/administrator'
@@ -40,7 +38,7 @@ const loginAdmint = (data)=>{
         localStorage.setItem('token', res.data.token)
         localStorage.setItem('name', res.data.administrator.firstName)
         localStorage.setItem('id', res.data.administrator.id)
-        console.log(res.data)
+        setUser(res.data)
     })
     .catch(err =>{
         localStorage.removeItem('token'),
@@ -49,7 +47,7 @@ const loginAdmint = (data)=>{
 }
   
 
-  return { createNewUser, loginUser, createNewAdmin, loginAdmint}
+  return { createNewUser, loginUser, loginAdmint}
 };
 
 export default useAunthentication;

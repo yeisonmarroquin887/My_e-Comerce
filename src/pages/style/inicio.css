@@ -1,0 +1,70 @@
+/* welcome.css */
+
+
+  .welcome-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('https://cdn.forbes.co/2020/12/Claro-Foto-1280x720-1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .tex_w {
+    background-color: rgba(44, 21, 23, 0.397);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .welcome-text {
+    margin-bottom: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .welcome-text h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .role-button {
+    background-color: #a00b0b;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 10px 15px;
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .role-button:hover {
+    background-color: #ff3355;
+  }
+  
+  /* Media query para ajustar el diseño en dispositivos móviles */
+  @media screen and (max-width: 480px) {
+    .welcome-text h1 {
+      font-size: 20px;
+    }
+  
+    .role-button {
+      font-size: 16px;
+      padding: 10px 20px;
+    }
+  }
+  

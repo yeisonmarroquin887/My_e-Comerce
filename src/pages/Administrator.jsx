@@ -11,20 +11,24 @@ const Administrator = () => {
   const deleteToken = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('name');
-    navigate('/loginadmin'); // Redireccionar al inicio de sesión después de cerrar sesión
+    localStorage.removeItem('id');
+    navigate('/')
   };
 
   const [user, setUser] = useState({ users: [] });
+  const [noUser, setnoUser] = useState()
+ 
 
   useEffect(() => {
     const url = `https://ecomereceapi.onrender.com/api/v1/administrator/${id}`;
     axios
       .get(url, getConfingToken())
       .then((res) => setUser({ users: res.data.users }))
-      .catch((err) => console.log(err));
+      .catch((err) => setnoUser(err));
   }, [id]);
 
   console.log(user);
+  console.log(noUser)
 
   const [cambio, setCambio] = useState(true);
 
@@ -40,22 +44,21 @@ const Administrator = () => {
 
   return (
     <div className='admin'>
-      <br /><br /><br /><br /><br />
-       <button className='buttom' onClick={deleteToken}>Cerrar sesión</button>
-      <button className='buttom'  onClick={handleCambio}>Clientes</button>
-      <h1>hola</h1>
-      <div className={cambio ? 'cerrado' : 'cliente'}>
-        <br />
-        <button className='buttom'  onClick={handleCambi}>cerrar</button>
-        {user.users.length === 0 ? (
-          'No tienes clientes'
-        ) : (
-          <Users key={user.id} user={user} />
-        )}
-       
-      </div>
-      
+    <br /><br /><br /><br /><br />
+    <h1>Hola {localStorage.getItem('name')} aqui tienes tus clientes</h1>
+    <button className='buttom' onClick={deleteToken}>Cerrar sesión</button>
+    <button className='buttom' onClick={handleCambio}>Clientes</button>
+  
+    <div className={cambio ? 'cerrado' : 'cliente'}>
+      <br />
+      <button className='buttom' onClick={handleCambi}>cerrar</button>
+      {user.users.length === 0 ? (
+        <p className='no-clients'>No tienes clientes</p>
+      ) : (
+        <Users key={user.id} user={user} />
+      )}
     </div>
+  </div>
   );
 };
 
