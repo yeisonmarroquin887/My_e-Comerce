@@ -4,7 +4,7 @@ import "./user.css";
 
 const Users = ({ user }) => {
   return (
-    <div>
+    <div className="Users">
       {user.users?.map((cliente) => (
         <Cliente id={cliente.id} datos={cliente} />
       ))}

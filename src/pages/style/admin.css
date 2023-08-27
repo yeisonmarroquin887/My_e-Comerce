@@ -1,9 +1,12 @@
 .admin{
     position: relative;
 }
-.clientes{
+.cliente{
     background-color: aqua;
-    
+    position: absolute;
+    width: 100%;
+    margin-top: -8em;
+    padding-top: 1em;
 }
 .cerrado{
    height: 0;

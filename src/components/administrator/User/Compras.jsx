@@ -1,18 +1,20 @@
-import React from 'react'
-import './clientes.css'
+import React from 'react';
+import './compras.css';
 
-const Compras = ({compra}) => {
-    console.log(compra)
+const Compras = ({ compras }) => {
+  console.log(compras.price)
   return (
-    <div className='compra'>
-      <h2>nombre</h2>
-      <h3>{compra.product.title}</h3>
-      <h2>Cantidad</h2>
-      <h3>{compra.quantity}</h3>
-      <h2>Precio</h2>
-      <h3>{compra.product.price}</h3>
+    <div className='Compras'> {/* Agrega la clase CSS al contenedor principal */}
+      <h2 className='h'>Compras del Usuario</h2>
+      <ul className='u'>
+        {compras.map((compra) => (
+          <li className='i' key={compra.id}>
+            <strong>Producto:</strong> {compra.product.title} <b>Cantidad:</b>  {compra.quantity} <b>Price:</b> {compra.product.price}
+          </li>
+        ))}
+      </ul>
     </div>
-  )
-}
+  );
+};
 
-export default Compras
+export default Compras;

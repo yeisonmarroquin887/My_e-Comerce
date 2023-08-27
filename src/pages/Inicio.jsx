@@ -18,7 +18,7 @@ const Inicio = () => {
         <br />
         <br /><br />
       coloca tu rol
-      <button onClick={handelrol2}>Administrador</button>
+      <button  onClick={handelrol2}>Administrador</button>
       <button onClick={handelrol1}>Cliente</button>
     </div>
   )

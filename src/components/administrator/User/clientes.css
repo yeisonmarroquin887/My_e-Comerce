@@ -1,14 +1,59 @@
-.Clientes{
-    background-color: rgb(97, 97, 218);
-    padding: 1em;
-    border-radius: 2em;
+/* clientes.css */
+.Cliente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
-.compras{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
+
+.Clientes {
+  text-align: center;
+  margin: 20px;
+  background-color: rgb(158, 189, 224);
+  padding: 1em;
+  border-radius: 2em;
 }
-.compra{
-    background-color: aqua;
-    padding: 1em;
+
+button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.ComprasOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.ComprasContainer {
+  background-color: white;
+  padding: 20px;
+  max-width: 80%;
+  max-height: 80%;
+  overflow-y: auto;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.CerrarCompras {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #d9534f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
 }
