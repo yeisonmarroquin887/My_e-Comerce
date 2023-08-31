@@ -2,6 +2,7 @@ import React from "react";
 import Administrator from "./Administrator";
 import useAunthentication from "../hooks/useAunthentication";
 import './style/LoginAdmin.css'
+import HeaderAdmin from "../components/shared/HeaderAdmin";
 
 const LoginAdmin = () => {
   const handleLogin = (e) => {
@@ -15,7 +16,7 @@ const LoginAdmin = () => {
   const { loginAdmint } = useAunthentication();
   return (
     <article className="login-admin">
-        <LoginAdmin/>
+      <HeaderAdmin/>
       {localStorage.getItem("token") && localStorage.getItem("Role") ==="admin" ? (
         <Administrator />
       ) : (

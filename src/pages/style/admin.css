@@ -2,10 +2,10 @@
     position: relative;
 }
 .cliente{
-    background-color: aqua;
+    background-color: rgb(230, 203, 203);
     position: absolute;
     width: 100%;
-    margin-top: -8em;
+    margin-top: -9em;
     padding-top: 1em;
 }
 .cerrado{

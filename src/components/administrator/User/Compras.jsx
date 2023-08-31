@@ -27,8 +27,8 @@ const Compras = ({ compras }) => {
           <li className='i' key={productInfo.product.id}>
             <div className="product-details">
               <div className="product-title">{productInfo.product.title}</div>
-              <div><strong>Cantidad:</strong> {productInfo.quantity}</div>
-              <div><strong>Precio:</strong> {productInfo.product.price}</div>
+              <div className='qu'><strong>Cantidad:</strong> {productInfo.quantity}</div>
+              <div className='qu'><strong>Precio:</strong> {productInfo.product.price}</div>
             </div>
           </li>
         ))}
