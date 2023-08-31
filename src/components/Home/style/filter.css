@@ -3,12 +3,13 @@
 }
 .filter_name{
     color: white;
+    border-bottom: 1px solid rgb(143, 137, 137);
 }
 .filter_li{
     cursor: pointer;
     margin-top: 1em;
     text-align: center;
-    color: #6b6d67;
+    color: #e2e4de;
 }
 .filter_li:hover{
     color: white;
@@ -22,7 +23,7 @@
     margin-bottom: .6em;
 }
 .filter_label{
-    color: #6b6d67;
+    color: #fcfafa;
     margin-left: 1em;
 }
 .filter_input{
