@@ -6,6 +6,7 @@ import SliderImgs from "../components/ProductId/SliderImgs";
 import SimiliarProducts from "../components/ProductId/SimiliarProducts";
 import "./style/productid.css";
 import Header from "../components/shared/Header";
+import Loading from "../components/Loading/Loading";
 
 const ProductId = () => {
   const { id } = useParams();
@@ -23,12 +24,20 @@ const ProductId = () => {
   return (
     <div className="ProductId">
      <Header/>
-      <div className="ProductId_description">
+     {
+      Product
+      ? <div>
+         <div className="ProductId_description">
         <SliderImgs product={Product} />
         <ProductIdInfo product={Product} />
       </div>
-
+      
       <SimiliarProducts product={Product} />
+      </div>
+
+      :<Loading/>
+     }
+    
     </div>
   );
 };

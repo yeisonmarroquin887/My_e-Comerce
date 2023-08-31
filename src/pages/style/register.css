@@ -7,8 +7,9 @@
     margin-top: 5em;
 }
 .Register_title{
-    color: #08B5C0;
+    color: #ee0505;
 }
+
 .Register_inter{
     box-shadow:
     inset 0 -3em 3em rgba(0, 0, 0, 0.1),
@@ -18,6 +19,10 @@
     gap: 0em;
     padding: 2em;
     border-radius: 1em;
+}
+.a{
+    background-color: blue;
+    color: red;
 }
 .Register_div{
     display: grid;
@@ -34,7 +39,7 @@
     text-align: center;
 }
 .Register_btn{
-    background-color: #08B5C0;
+    background-color: #f80b0b;
     height: 3em;
     border-radius: 10px;
     margin-bottom: 1em;
@@ -56,7 +61,7 @@
     color: #999;
 }
 .register_link{
-    color: #08B5C0;
+    color: #f50808;
 }
 @media (min-width: 700px) {
     .Register{
@@ -65,10 +70,11 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-top: 5em;
+        margin-top: 9em;
+        margin-bottom: 4em;
     }
     .Register_title{
-        color: #08B5C0;
+        color: #f80404;
     }
     .Register_inter{
      display: grid;
@@ -90,7 +96,7 @@
         text-align: center;
     }
     .Register_btn{
-        background-color: #08B5C0;
+        background-color: #bb0606;
         height: 3em;
         border-radius: 10px;
         margin-bottom: 1em;

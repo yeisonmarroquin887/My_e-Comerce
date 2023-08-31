@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './style/logeado.css'
 
 const Logeado = ({deleteToken}) => {
+  const [Isloanding, setIsloanding] = useState(false);
+
+  setTimeout(() => {
+    setIsloanding(true);
+  }, 1000);
   return (
     <div className='logeado'>
+      
           <div className='logeado_user'>
             <div className='logeado_icon-father'>
                 <i className='logeado_icon bx bxs-user-circle'></i>

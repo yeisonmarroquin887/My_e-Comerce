@@ -32,6 +32,7 @@ const useAunthentication = () => {
 };
 
 
+
 const loginAdmint = (data)=>{
     const url = 'https://ecomereceapi.onrender.com/api/v1/administrator/login'
     axios.post(url, data)

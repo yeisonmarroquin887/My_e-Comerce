@@ -6,6 +6,7 @@ import FilterCategory from '../components/Home/FilterCategory'
 import FilterByPrice from '../components/Home/FilterByPrice'
 import { Link } from 'react-router-dom'
 import Header from '../components/shared/Header'
+import Loading from '../components/Loading/Loading'
 
 const Home = () => {
    const {productsGlobal} = useSelector(state => state)
@@ -55,10 +56,19 @@ const Home = () => {
     setCambio(false)
    }
 
+   const [Isloanding, setIsloanding] = useState(false);
+
+   setTimeout(() => {
+     setIsloanding(true);
+   }, 1000);
+
   return  (
     <div className=''>
     <Header/>
-      <div onClick={handlefilters} className='fil'> 
+    {
+      Isloanding
+      ?    <div>
+            <div onClick={handlefilters} className='fil'> 
         <i className='bx bxs-filter-alt'> <samp className='name'>filters</samp></i>
       </div>
    
@@ -84,6 +94,11 @@ const Home = () => {
         ))
      }
       </div>
+    </div>
+      : <Loading/>
+    }
+
+
     
     </div>
   )

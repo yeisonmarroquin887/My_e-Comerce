@@ -2,6 +2,8 @@ import React from "react";
 import  '../components/style/cardproduct.css'
 import { useNavigate } from "react-router-dom";
 import useCrudCart from "../hooks/useCrudCart";
+import Loading from "./Loading/Loading";
+import LoadingProduct from "./Loading/LoadingProduct";
 
 const CardProducts = ({ product }) => {
 
@@ -31,12 +33,20 @@ const CardProducts = ({ product }) => {
 
   
   return (
+    <div className="CardProduct">
             <article onClick={HandelSelectProduct} className="CardProduct">
+
+        
             
-        <header className="CardProduct_header">
-          <img className="CardProduct_img img1" src={product?.productImgs[0].url} alt={product.title} />
+          {
+            product?.productImgs[0].url
+            ? <header className="CardProduct_header">
+    <img className="CardProduct_img img1" src={product?.productImgs[0].url} alt={product.title} />
           <img className="CardProduct_img img2" src={product?.productImgs[1].url} alt={product.title} />
         </header>
+        :<LoadingProduct/>
+          }
+      
         <div className="CardProduct_body">
               <section className="CardProduct_setcion">
             <h4 className="CardProduct_subtitle">{product.brand}</h4>
@@ -52,8 +62,12 @@ const CardProducts = ({ product }) => {
         </button>
         
         </div>
+
+      </article> 
     
-      </article>
+
+    </div>
+  
     
 
   );

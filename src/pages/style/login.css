@@ -14,11 +14,13 @@
     object-fit: contain;
     padding: 1em;
     max-width: 75%;
+    height: 20vh;
     margin: auto;
     margin-bottom: 5em;
+    display: flex;
 }
 .Login_title{
-    color: #08B5C0;
+    color: #f50a1e;
     margin-top: -5em;
     text-align: center;
 }
@@ -38,7 +40,7 @@
 }
 .Login_bnt{
     width: 100%;
-    background-color: #08B5C0;
+    background-color: #e60e0e;
     height: 3em;
     border-radius: 10px;
     color: white;
@@ -50,10 +52,10 @@
    color: #999;
 }
 .login_link{
-    color: #08B5C0;
+    color: #f10c0c;
 }
 .Login_olvidar{
-    color: #999;
+    color: #fa0b0b;
     text-align: center;
 }
 
