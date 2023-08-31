@@ -9,7 +9,8 @@ const Administrator = () => {
   const id = localStorage.getItem('id');
   const navigate = useNavigate();
   const deleteToken = () => {
-    localStorage.removeItem('tokenAdmint');
+    localStorage.removeItem('Role')
+    localStorage.removeItem('token');
     localStorage.removeItem('name');
     localStorage.removeItem('id');
     navigate('/')

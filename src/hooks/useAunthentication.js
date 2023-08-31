@@ -31,25 +31,24 @@ const useAunthentication = () => {
     .catch(err => console.log(err))
 };
 
- const [admin, setAdmin] = useSetState()
 
 const loginAdmint = (data)=>{
     const url = 'https://ecomereceapi.onrender.com/api/v1/administrator/login'
     axios.post(url, data)
     .then(res => {
-        localStorage.setItem('tokenAdmint', res.data.token)
+        localStorage.setItem('token', res.data.token)
+        localStorage.setItem('Role', res.data.administrator.role)
         localStorage.setItem('name', res.data.administrator.firstName)
         localStorage.setItem('id', res.data.administrator.id)
-        setAdmin(res.data)
+        setUser(res.data)
     })
     .catch(err =>{
         localStorage.removeItem('token'),
         console.log(err)
     })
 }
-  console.log(admin)
 
-  return { createNewUser, loginUser, loginAdmint, admin}
+  return { createNewUser, loginUser, loginAdmint}
 };
 
 export default useAunthentication;
