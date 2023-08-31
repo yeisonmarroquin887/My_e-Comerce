@@ -1,39 +1,49 @@
-/* compras.css */
 .Compras {
-    background-color: #f8f8f8;
-    padding: 10px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
-  }
-  
-  .u {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .i {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  strong {
-    font-weight: bold;
-    margin-right: 10px;
-  }
-  
-  .i:hover {
-    background-color: #f0f0f0;
-  }
-  
-  .h {
-    margin-bottom: 15px;
-  }
-  
-  /* Agregar más estilos aquí según sea necesario */
-  
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  width: 70%; /* Ajusta el ancho según tus preferencias */
+  margin: 0 auto; /* Centra el contenido horizontalmente */
+}
+
+.u {
+  list-style-type: none;
+  padding: 0;
+}
+
+.i {
+  margin-bottom: 15px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+  display: flex;
+}
+
+.product-details {
+  flex: 1;
+  padding-left: 20px;
+}
+
+.product-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.h {
+  margin-bottom: 15px;
+}
+
+.total-price {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.total-label {
+  font-weight: bold;
+}
+
+.total-value {
+  font-size: 18px;
+}

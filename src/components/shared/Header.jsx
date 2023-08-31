@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <header className='Header'>
-        <h1 className='Header_h1'><Link to='/'> <img className='header_img' src="../images/logo_header.jpg" alt="" /> </Link></h1>
+        <h1 className='Header_h1'><Link to='/home'> <img className='header_img' src="../images/Logo-header.jpg" alt="" /> </Link></h1>
          <div onClick={handelClose} className='Header_menu'>
           <i className='bx bx-menu'></i>
          </div>
@@ -30,7 +30,8 @@ const Header = () => {
         <nav className={`Header_nav ${Close && 'Header_close'}`}>
           
             <ul className='Header_ul'>
-            <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/'>Inicio</Link> </li>
+                <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/'>Inicio</Link> </li>
+                <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/home'>Products</Link> </li>
                 <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/login'>Login</Link> </li>
                 <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/purchases'>Purchases</Link> </li>
                 <li onClick={handelClosevol} className='Header_li'> <Link className='Header_li' to='/cart'>Cart</Link> </li>

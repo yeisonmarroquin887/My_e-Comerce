@@ -15,7 +15,7 @@
   border-radius: 2em;
 }
 
-button {
+.buttonC {
   margin-top: 10px;
   padding: 10px 20px;
   background-color: #007bff;
@@ -40,11 +40,12 @@ button {
 .ComprasContainer {
   background-color: white;
   padding: 20px;
-  max-width: 80%;
+  width: 70%;
   max-height: 80%;
   overflow-y: auto;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
   position: relative;
+  border-radius: .5em;
 }
 
 .CerrarCompras {
@@ -57,3 +58,4 @@ button {
   padding: 5px 10px;
   cursor: pointer;
 }
+

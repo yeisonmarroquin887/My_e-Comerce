@@ -1,15 +1,24 @@
-import './style/productpurchases.css'
+import React from 'react';
+import './style/productpurchases.css';
 
-const ProductPurchases = ({product}) => {
-    console.log(product)
+const ProductPurchases = ({ product }) => {
+  const totalPrice = product.quantity * product.product.price;
+
   return (
-    <article className="purcha">
-    <img className="purcha_img" src={product.product?.productImgs[0].url} alt="" />
-    <h3 className="purcha_title">{product.product.title}</h3>
-    <span className="purcha_quantity">{product.quantity}</span>
-    <span className="purcha_total">{product.quantity * product.product.price}</span>
-    </article>
-  )
-}
+    <div className="product-purchases">
+      <div className="product-purchase">
+        <img className="product-image" src={product.product.productImgs[0].url} alt="" />
+        <div className="product-details">
+          <h3 className="product-title">{product.product.title}</h3>
+          <span className="product-quantity">Quantity: {product.quantity}</span>
+        </div>
+      </div>
+      <div className="total-price">
+        <span className="total-label">Total Price:</span>
+        <span className="total-value">${totalPrice.toFixed(2)}</span>
+      </div>
+    </div>
+  );
+};
 
-export default ProductPurchases
+export default ProductPurchases;

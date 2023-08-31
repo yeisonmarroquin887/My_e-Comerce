@@ -12,11 +12,10 @@ const LoginAdmin = () => {
     loginAdmint(data);
   };
 
-  const { loginAdmint } = useAunthentication();
-
+  const { loginAdmint, admin } = useAunthentication();
   return (
     <article className="login-admin">
-      {localStorage.getItem("token") ? (
+      {localStorage.getItem("tokenAdmint") ? (
         <Administrator />
       ) : (
         <div className="login-form">

@@ -3,8 +3,9 @@
  :root {
     --white: rgb(167, 146, 245);
     --light-white: rgb(223, 223, 241);
-    --red: red;
-    --orange: rgb(233, 11, 48);
+    --bg-header: #d81f38fa;
+    --bg-header-li: #b30606fd;
+    --input: rgba(247, 40, 40, 0.171);
     --border-color: rgb(128, 128, 128);
     --shadow-color: rgba(88, 88, 88, 0.493);
     --grey-text-color: rgba(155, 155, 155, 0.872);
@@ -15,7 +16,7 @@
     --position-index-fourth: 4000;
 }
 body{
-    font-family: Yantramanav,sans-serif;;
+    font-family: Yantramanav,sans-serif;
 }
 button{
     border: none;

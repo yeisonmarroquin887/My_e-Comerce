@@ -20,7 +20,7 @@ const Cliente = ({ datos }) => {
         <h3>{datos.email}</h3>
         <h1>Telefono</h1>
         <h3>{datos.phone}</h3>
-        <button onClick={toggleCompras}>Compras</button>
+        <button className='buttonC' onClick={toggleCompras}>Compras</button>
       </div>
 
       {showCompras && (

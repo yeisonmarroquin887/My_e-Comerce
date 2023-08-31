@@ -1,5 +1,5 @@
 .Header{
-    background-color: #08B5C0;
+    background-color: var(--bg-header-li);
     display: flex;
     align-items: center;
     position: fixed;
@@ -14,21 +14,21 @@
 }
 .Header_h1{
     margin-left: 0em;
-    background-color: #24e9f7;
-    width: 35%;
+    background-color:var(--bg-header);
+    width: 40%;
     height: 100%;
     display: flex;
     justify-content: center;
 }
 .header_img{
     width: 100%;
-    max-width: 3em;
+    max-width: em;
     height: 100%;
 }
 
 .Header_nav{
     position: fixed;
-    background-color: #08B5C0;
+    background-color: #a00f3a;
     height: 115vh;
     margin-top: 40.9em;
     width: 100%;
@@ -46,7 +46,6 @@
      font-size: 1.1em;
      text-align: center;
      margin-top: -6em;
-
 }
 .Header_li{
     color: #ccd7f5;
@@ -55,7 +54,7 @@
     font-size: 2em;
     background-color: #c2bfbf;
     border-radius: 1em;
-    color: #08B5C0;
+    color: #f70e48;
     margin-right: 1em;
     cursor: pointer;
     transition: transform 300ms ease;
@@ -70,7 +69,6 @@
 
 @media (min-width:800px) {
     .Header{
-        background-color: #07a9b4;
         display: flex;
         align-items: center;
         position: fixed;
@@ -85,15 +83,14 @@
     }
     .Header_h1{
         margin-left: 0em;
-        background-color: #24e9f7;
-        width: 15%;
+        width: 22%;
         height: 100%;
         display: flex;
         justify-content: center;
     }
     .header_img{
         width: 100%;
-        max-width: 3em;
+        max-width: 6em;
         height: 100%;
     }
     .Header_ul{
@@ -101,6 +98,7 @@
      display: flex;
      gap: 4em;
      font-size: 1.1em;
+     margin-left: -8em;
     }
     .Header_li{
         color: white;

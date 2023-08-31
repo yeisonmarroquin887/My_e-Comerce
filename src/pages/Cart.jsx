@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { getAllProductsCartThunk } from "../store/slice/cart.slice";
-import ProductInCart from "../components/Cart/ProductInCart";
-import usePurchases from "../hooks/usePurchases";
-import './style/cart.css'
+import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getAllProductsCartThunk } from '../store/slice/cart.slice';
+import ProductInCart from '../components/Cart/ProductInCart';
+import usePurchases from '../hooks/usePurchases';
+import './style/cart.css';
+import Header from '../components/shared/Header';
 
 const Cart = () => {
   const dispatch = useDispatch();
@@ -13,34 +14,42 @@ const Cart = () => {
   }, []);
 
   const { cartsGlobal } = useSelector((state) => state);
-  console.log(cartsGlobal);
-  const totalPriceCart = cartsGlobal?.reduce((acc, cv) => acc + cv.quantity * cv.product.price, 0)
-  console.log({totalPriceCart})
+  const [totalPriceCart, setTotalPriceCart] = useState(0);
 
-  const {buyThisCart} = usePurchases()
+  useEffect(() => {
+    if (cartsGlobal) {
+      const newTotalPrice = cartsGlobal.reduce(
+        (acc, cv) => acc + cv.quantity * cv.product.price,
+        0
+      );
+      setTotalPriceCart(newTotalPrice);
+    }
+  }, [cartsGlobal]);
 
-  const handlePurchases = () => {
-      buyThisCart()
-  }
-  
+  const { buyThisCart } = usePurchases();
 
   return (
-    <div className="cart">
+    <div className='cart'>
+      <Header />
       <br />
       <br />
-      
-      <h2 className="cart_title">Cart</h2>
-      <div className="cart_container">
-        {
-        cartsGlobal?.map((prodCart) => (
-          <ProductInCart key={prodCart.id} prodCart={prodCart}  />
-        ))
-        }
+
+      <h2 className='cart_title'>Cart</h2>
+      <div className='cart_container'>
+        {cartsGlobal?.map((prodCart) => (
+          <ProductInCart
+            key={prodCart.id}
+            prodCart={prodCart}
+            setTotalPriceCart={setTotalPriceCart} // Pasar la función al componente hijo
+          />
+        ))}
       </div>
-      <footer className="cart_footer">
-        <h4 className="cart_total-label">Total:</h4>
-        <h3 className="cart_total-value">{totalPriceCart}</h3>
-        <button className="cart_btn" onClick={handlePurchases}>Buy now</button>
+      <footer className='cart_footer'>
+        <h4 className='cart_total-label'>Total:</h4>
+        <h3 className='cart_total-value'>{totalPriceCart}</h3>
+        <button className='cart_btn' onClick={buyThisCart}>
+          Buy now
+        </button>
       </footer>
     </div>
   );

@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import './style/filter.css'
 
 const FilterCategory = () => {
-  const url = `https://ecomereceapi.onrender.com/api/v1/categoris`
+  const url = 'https://ecomereceapi.onrender.com/api/v1/categoris'
     const [apiInfo, getProductById] = useFetch(url)
 
     useEffect(() => {
@@ -17,8 +17,9 @@ const FilterCategory = () => {
     const dispatch = useDispatch()
 
     const handleCategories = (id) => {
-        const url = `https://ecomereceapi.onrender.com/api/v1/products?categoris=${id}`
-        dispatch(getAllproductsThunk(url)) 
+        const url = `https://ecomereceapi.onrender.com/api/v1/products?category=${id}`
+        dispatch(getAllproductsThunk(url))
+        console.log("ejecute") 
     } 
 
     const handleClickAllProducts = () => {

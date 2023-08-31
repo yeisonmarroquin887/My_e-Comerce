@@ -2,17 +2,41 @@ import React from 'react';
 import './compras.css';
 
 const Compras = ({ compras }) => {
-  console.log(compras.price)
+  console.log(compras);
+  const productsTotal = {};
+
+  compras.forEach((compra) => {
+    const { id, quantity, product } = compra;
+    if (productsTotal[id]) {
+      productsTotal[id].quantity += quantity;
+    } else {
+      productsTotal[id] = { product, quantity };
+    }
+  });
+
+  const totalPrice = Object.values(productsTotal).reduce(
+    (acc, { product, quantity }) => acc + quantity * product.price,
+    0
+  );
+
   return (
-    <div className='Compras'> {/* Agrega la clase CSS al contenedor principal */}
+    <div className='Compras'>
       <h2 className='h'>Compras del Usuario</h2>
       <ul className='u'>
-        {compras.map((compra) => (
-          <li className='i' key={compra.id}>
-            <strong>Producto:</strong> {compra.product.title} <b>Cantidad:</b>  {compra.quantity} <b>Price:</b> {compra.product.price}
+        {Object.values(productsTotal).map((productInfo) => (
+          <li className='i' key={productInfo.product.id}>
+            <div className="product-details">
+              <div className="product-title">{productInfo.product.title}</div>
+              <div><strong>Cantidad:</strong> {productInfo.quantity}</div>
+              <div><strong>Precio:</strong> {productInfo.product.price}</div>
+            </div>
           </li>
         ))}
       </ul>
+      <div className="total-price">
+        <span className="total-label">Precio Total:</span>
+        <span className="total-value">${totalPrice.toFixed(2)}</span>
+      </div>
     </div>
   );
 };

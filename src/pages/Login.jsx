@@ -4,6 +4,7 @@ import './style/login.css'
 import { Link, useNavigate } from 'react-router-dom'
 import { useSetState } from 'react-use'
 import Logeado from './Logeado'
+import Header from '../components/shared/Header'
 
 const Login = () => {
  
@@ -31,13 +32,13 @@ const Login = () => {
 
   return (
     <article className='Login'>
-
+     <Header/>
      
      {
       localStorage.getItem('token')
       ?<Logeado deleteToken={deleteToken}/>
       :<> <div className='Login_img'>
-        <img className='Login_ing' src="../images/logo-color.png" alt="" />
+        <img className='Login_ing' src="../images/Logo-header.jpg" alt="" />
       </div>
        <form  onSubmit={handleLogin}>
         <div className='Login_title'>

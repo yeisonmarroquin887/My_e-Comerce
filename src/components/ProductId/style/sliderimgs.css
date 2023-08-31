@@ -25,7 +25,7 @@
     width: 1.6em;
     aspect-ratio: 1;
     position: absolute;
-    background-color: rgb(15, 173, 173);
+    background-color: var(--bg-header);
     color: rgb(247, 250, 253);
     font-size: 1.5em;
     top: 50%;

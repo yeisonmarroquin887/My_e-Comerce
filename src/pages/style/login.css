@@ -10,7 +10,7 @@
 }
 .Login_img{
     border-radius: 1em;
-    background-color: #24e9f7;
+    background-color: var(--bg-header);
     object-fit: contain;
     padding: 1em;
     max-width: 75%;
@@ -70,13 +70,16 @@
     }
     .Login_img{
         border-radius: 1em;
-        background-color: #24e9f7;
+        background-color: var(--bg-header);
         object-fit: contain;
         padding: 1em;
         margin-top: -1.5em;
+        height: 15em;
+        width: 50em;
+        display: flex;
     }
     .Login_title{
-        color: #08B5C0;
+        color: var(--bg-header);
     }
     .Login_div{
         display: grid;
@@ -94,7 +97,7 @@
     }
     .Login_bnt{
         width: 100%;
-        background-color: #08B5C0;
+        background-color: var(--bg-header);
         height: 3em;
         border-radius: 10px;
         color: white;

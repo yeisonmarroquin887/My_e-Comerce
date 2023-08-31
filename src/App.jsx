@@ -28,7 +28,6 @@ function App() {
 
   return (
     <div className='App'>
-      <Header/>
       
       <Routes>
         <Route path='/' element={<Inicio/>}/>

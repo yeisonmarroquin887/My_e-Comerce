@@ -19,7 +19,7 @@
     font-size: 1.2rem;
     aspect-ratio: 1;
     border-radius: 50%;
-    background-color: #08B5C0;
+    background-color: var(--bg-header);
     color: white;
     transition: transform 200ms ease;
     cursor: pointer;
@@ -76,7 +76,7 @@
         font-size: 1.2rem;
         aspect-ratio: 1;
         border-radius: 50%;
-        background-color: #08B5C0;
+        background-color: var(--bg-header);
         color: white;
         transition: transform 200ms ease;
         cursor: pointer;

@@ -5,6 +5,7 @@ import ProductIdInfo from "../components/ProductId/ProductIdInfo";
 import SliderImgs from "../components/ProductId/SliderImgs";
 import SimiliarProducts from "../components/ProductId/SimiliarProducts";
 import "./style/productid.css";
+import Header from "../components/shared/Header";
 
 const ProductId = () => {
   const { id } = useParams();
@@ -21,6 +22,7 @@ const ProductId = () => {
   
   return (
     <div className="ProductId">
+     <Header/>
       <div className="ProductId_description">
         <SliderImgs product={Product} />
         <ProductIdInfo product={Product} />

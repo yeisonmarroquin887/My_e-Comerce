@@ -9,7 +9,7 @@ const Administrator = () => {
   const id = localStorage.getItem('id');
   const navigate = useNavigate();
   const deleteToken = () => {
-    localStorage.removeItem('token');
+    localStorage.removeItem('tokenAdmint');
     localStorage.removeItem('name');
     localStorage.removeItem('id');
     navigate('/')
@@ -46,12 +46,12 @@ const Administrator = () => {
     <div className='admin'>
     <br /><br /><br /><br /><br />
     <h1>Hola {localStorage.getItem('name')} aqui tienes tus clientes</h1>
-    <button className='buttom' onClick={deleteToken}>Cerrar sesión</button>
-    <button className='buttom' onClick={handleCambio}>Clientes</button>
+    <button className='buttonC' onClick={deleteToken}>Cerrar sesión</button>
+    <button className='buttonC' onClick={handleCambio}>Clientes</button>
   
     <div className={cambio ? 'cerrado' : 'cliente'}>
       <br />
-      <button className='buttom' onClick={handleCambi}>cerrar</button>
+      <button className='buttonC' onClick={handleCambi}>cerrar</button>
       {user.users.length === 0 ? (
         <p className='no-clients'>No tienes clientes</p>
       ) : (
