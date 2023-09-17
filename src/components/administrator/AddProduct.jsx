@@ -3,20 +3,12 @@ import Image from "./productadd/Image"
 import Productadd from "./productadd/Productadd"
 
 
-const AddProduct = () => {
+const AddProduct = ({ addclose }) => {
 
   return (
     <div>
-      ingrsar producto
-      <nav>
-        <Image/>
-      </nav>
-       <nav>
-        <Productadd/>
-       </nav>
-       <nav>
-        <CategoryAdd/>
-       </nav>
+      <button onClick={addclose}>Cerrar</button>
+      <Productadd/>
    
     </div>
   )

@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useForm } from "react-hook-form";
 import './style/recoverpassword.css'
+import Header from "../components/shared/Header";
 
 const RecoverPassword = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -18,6 +19,7 @@ const RecoverPassword = () => {
 
   return (
     <div className="recover">
+      <Header/>
         <div className="recover_marco">
             <div className="recover_priva">
         <i className='recove_icon bx bxs-lock-alt'></i>

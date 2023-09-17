@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import './style/updatePassword.css'
+import Header from '../components/shared/Header';
 
 const UpdatePassword = () => {
   const { token } = useParams();
@@ -29,6 +30,7 @@ const UpdatePassword = () => {
 
   return (
     <div className='update'>
+      <Header/>
         <div className='update_marco'>
             <div className='update_priva'>
                <i className='update_icon bx bxs-lock-open-alt'></i>

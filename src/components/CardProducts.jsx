@@ -39,7 +39,7 @@ const CardProducts = ({ product }) => {
         
             
           {
-            product?.productImgs[0].url
+           true
             ? <header className="CardProduct_header">
     <img className="CardProduct_img img1" src={product?.productImgs[0].url} alt={product.title} />
           <img className="CardProduct_img img2" src={product?.productImgs[1].url} alt={product.title} />

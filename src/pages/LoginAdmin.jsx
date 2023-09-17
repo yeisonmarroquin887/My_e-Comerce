@@ -23,6 +23,7 @@ const LoginAdmin = () => {
         <div className="login-form">
           <br /> <br /><br /><br /><br /><br />
           <form className="form" onSubmit={handleLogin}>
+            <h1 className="title">Ingresar</h1>
             <div className="form-group">
               <label className="form-label" htmlFor="email">Email</label>
               <input className="form-input" id="email" type="email" />

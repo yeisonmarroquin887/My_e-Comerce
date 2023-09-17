@@ -9,6 +9,28 @@
     padding-top: 1em;
 }
 .cerrado{
-   height: 0;
-   opacity: 0;
+  transform: scale(0);
+  height: 0;
+}
+.ADD{
+    background-color: rgb(168, 168, 197);
+}
+.CLOSE{
+    transform: scale(0);
+    height: 0;
+}
+.category{
+    background-color: rgb(224, 204, 204);
+    width: 100%;
+    max-width: 30em;
+    margin: auto;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.categoryClose{
+    transform: scale(0);
+    height: 0;
 }

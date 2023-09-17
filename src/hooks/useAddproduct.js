@@ -1,16 +1,27 @@
-/*import axios from "axios"
-import React from 'react'
+import axios from "axios"
 import getConfingToken from "../utils/getConfingToken"
+import { useState } from "react";
 
 const useAddproduct = (url) => {
-const creatProduct = (data) => {
-    axios.post(url,data,getConfingToken())
-    .then(res=>console.log(res.data))
-    .catch(err=>console.log(err))
-}
-return [creatProduct]
+const [productId, setproductId] = useState()
+const [ImgsId, setImgsId] = useState()
+  const creatProduct = (data) => {
+  axios.post(url,data,getConfingToken())
+  .then(res => setproductId(res.data))
+  .catch(err => console.log(err))
+  };
+
+  const incluImg = (formData) => {
+    console.log(formData)
+    const imgUrl = `https://ecomereceapi.onrender.com/api/v1/product_images`;
+    axios.post(imgUrl,formData,getConfingToken())
+    .then(res => setImgsId(res.data))
+    .catch(err => console.log(err))
+  };
+
+  return { creatProduct, incluImg, productId, ImgsId };
 }
 
-export default useAddproduct
-*/
+export default useAddproduct;
+
 

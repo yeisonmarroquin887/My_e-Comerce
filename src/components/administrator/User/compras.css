@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Questrial&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@600&display=swap');
 .Compras {
   background-color: #f8f8f8;
   padding: 20px;
@@ -6,7 +6,7 @@
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
   width: 70%; /* Ajusta el ancho según tus preferencias */
   margin: 0 auto; /* Centra el contenido horizontalmente */
-  font-family: 'Montserrat Alternates', sans-serif;
+ 
 }
 
 .u {
@@ -62,7 +62,7 @@
 }
 
 
-@media (min-width:700px) {
+@media (min-width:990px) {
   .Compras {
     background-color: #f8f8f8;
     padding: 20px;
