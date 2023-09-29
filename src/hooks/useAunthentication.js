@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useSetState } from "react-use";
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const useAunthentication = () => {
   const createNewUser = (data) => {
-    const url = `https://ecomereceapi.onrender.com/api/v1/users`;
+    const url = `${Api}/users`;
     axios.post(url, data)
     .then(res => console.log(res.data))
     .catch(err => console.log(err))
@@ -13,7 +14,7 @@ const useAunthentication = () => {
 
 
   const loginUser = (data) => {
-    const url = `https://ecomereceapi.onrender.com/api/v1/users/login`
+    const url = `${Api}/users/login`
     axios.post(url, data)
     .then(res => {
         localStorage.setItem('token', res.data.token)
@@ -25,7 +26,7 @@ const useAunthentication = () => {
   console.log(user)
 
   const createNewAdmin = (data) => {
-    const url = 'https://ecomereceapi.onrender.com/api/v1/administrator'
+    const url = `${Api}/administrator`
     axios.post(url, data)
     .then(res => console.log(res.data))
     .catch(err => console.log(err))
@@ -34,7 +35,7 @@ const useAunthentication = () => {
 
 
 const loginAdmint = (data)=>{
-    const url = 'https://ecomereceapi.onrender.com/api/v1/administrator/login'
+    const url = `${Api}/administrator/login`
     axios.post(url, data)
     .then(res => {
         localStorage.setItem('token', res.data.token)

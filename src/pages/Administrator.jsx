@@ -6,6 +6,7 @@ import Users from '../components/administrator/Users';
 import './style/admin.css';
 import AddProduct from '../components/administrator/AddProduct';
 import CategoryAdd from '../components/administrator/productadd/CategoryAdd';
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const Administrator = () => {
   const id = localStorage.getItem('id');
@@ -23,7 +24,7 @@ const Administrator = () => {
  
 
   useEffect(() => {
-    const url = `https://ecomereceapi.onrender.com/api/v1/administrator/${id}`;
+    const url = `${Api}/administrator/${id}`;
     axios
       .get(url, getConfingToken())
       .then((res) => setUser({ users: res.data.users }))

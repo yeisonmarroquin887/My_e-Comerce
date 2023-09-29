@@ -27,6 +27,9 @@ const Cart = () => {
   }, [cartsGlobal]);
 
   const { buyThisCart } = usePurchases();
+  const handleBuyNow = () => {
+    buyThisCart(cartsGlobal);
+  };
 
   return (
     <div className='cart'>
@@ -47,7 +50,7 @@ const Cart = () => {
       <footer className='cart_footer'>
         <h4 className='cart_total-label'>Total:</h4>
         <h3 className='cart_total-value'>{totalPriceCart}</h3>
-        <button className='cart_btn' onClick={buyThisCart}>
+        <button className='cart_btn' onClick={handleBuyNow}>
           Buy now
         </button>
       </footer>

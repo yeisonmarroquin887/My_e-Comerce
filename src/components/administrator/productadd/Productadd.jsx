@@ -5,17 +5,18 @@ import axios from 'axios';
 import getConfingToken from '../../../utils/getConfingToken';
 import defaultformProduct from '../../../utils/defaultformProduct';
 import './addproduct.css'
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const Productadd = () => {
   const [images, setImages] = useState([]);
   const [Category, setCategory] = useState([])
   const [selectedCategory, setSelectedCategory] = useState('');
-  const url = 'https://ecomereceapi.onrender.com/api/v1/products';
+  const url = `${Api}/products`;
   const { creatProduct, incluImg, productId, ImgsId } = useAddproduct(url);
   const { register, handleSubmit, reset } = useForm();
 
   const IdProduct = productId?.id;
-  const setUrl = `https://ecomereceapi.onrender.com/api/v1/products/${IdProduct}/images`
+  const setUrl = `${Api}/products/${IdProduct}/images`
   const IdImgs = ImgsId?.map(id => (
     id.id
   ))
@@ -49,7 +50,7 @@ const Productadd = () => {
       
   };
   useEffect(()=>{
-      const categoryUrl = "https://ecomereceapi.onrender.com/api/v1/categoris"
+      const categoryUrl = `${Api}/categoris`
   axios.get(categoryUrl)
   .then(res => setCategory(res.data))
   .catch(err => console.log(err))
@@ -62,12 +63,12 @@ const Productadd = () => {
 <div class="form-container">
   <form action="" onSubmit={handleSubmit(submit)}>
     <div>
-      <label class="form-label" htmlFor="imgs">Ingresa tres imágenes</label>
-      <input class="form-input form-file" type="file" multiple onChange={img} />
+      <label className="form-label" htmlFor="imgs">Ingresa tres imágenes</label>
+      <input className="form-input form-file" type="file" multiple onChange={img} />
     </div>
     <div>
-      <label class="form-label" htmlFor="cate">Elige la categoría del producto</label>
-      <select class="form-input form-select" id="cate" onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
+      <label className="form-label" htmlFor="cate">Elige la categoría del producto</label>
+      <select className="form-input form-select" id="cate" onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
         <option value="" disabled>Elige la Categoría</option>
         {
            Category.map(categoris => (
@@ -77,18 +78,18 @@ const Productadd = () => {
       </select>
     </div>
     <div>
-      <label class="form-label" htmlFor="title">Nombre del Producto</label>
-      <input class="form-input" type="text" id="title" {...register('title')} required />
+      <label className="form-label" htmlFor="title">Nombre del Producto</label>
+      <input className="form-input" type="text" id="title" {...register('title')} required />
     </div>
     <div>
-      <label class="form-label" htmlFor="des">Descripción del Producto</label>
-      <textarea class="form-input" id="des" {...register('description')} rows="6" required></textarea>
+      <label className="form-label" htmlFor="des">Descripción del Producto</label>
+      <textarea className="form-input" id="des" {...register('description')} rows="6" required></textarea>
     </div>
     <div>
-      <label class="form-label" htmlFor="price">Precio del Producto</label>
-      <input class="form-input" type="number" id="price" {...register('price')} required />
+      <label className="form-label" htmlFor="price">Precio del Producto</label>
+      <input className="form-input" type="number" id="price" {...register('price')} required />
     </div>
-    <button class="form-button" type="submit">Crear</button>
+    <button className="form-button" type="submit">Crear</button>
   </form>
 </div>
 
@@ -97,3 +98,4 @@ const Productadd = () => {
 };
 
 export default Productadd;
+

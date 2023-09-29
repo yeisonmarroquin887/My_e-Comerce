@@ -2,10 +2,11 @@ import React, { useEffect } from 'react'
 import useFetch from '../../hooks/useFetch'
 import CardProducts from '../CardProducts'
 import './style/similiarproduct.css'
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const SimiliarProducts = ({product}) => {
 
-    const url = `https://ecomereceapi.onrender.com/api/v1/products?category=${product?.categoryId}`
+    const url = `${Api}/products?category=${product?.categoryId}`
 
    const [filterProducts, getProductByCategory] = useFetch(url)
 

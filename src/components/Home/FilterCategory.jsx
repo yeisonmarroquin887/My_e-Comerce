@@ -3,9 +3,10 @@ import useFetch from '../../hooks/useFetch'
 import { getAllproductsThunk } from '../../store/slice/products.slice'
 import { useDispatch } from 'react-redux'
 import './style/filter.css'
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const FilterCategory = () => {
-  const url = 'https://ecomereceapi.onrender.com/api/v1/categoris'
+  const url = `${Api}/categoris`
     const [apiInfo, getProductById] = useFetch(url)
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const FilterCategory = () => {
     const dispatch = useDispatch()
 
     const handleCategories = (id) => {
-        const url = `https://ecomereceapi.onrender.com/api/v1/products?category=${id}`
+        const url = `${Api}/products?category=${id}`
         dispatch(getAllproductsThunk(url))
         console.log("ejecute") 
     } 

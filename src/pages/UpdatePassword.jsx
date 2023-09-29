@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import './style/updatePassword.css'
 import Header from '../components/shared/Header';
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const UpdatePassword = () => {
   const { token } = useParams();
@@ -19,7 +20,7 @@ const UpdatePassword = () => {
 
   const onSubmit = async (data) => {
     try {
-      const response = await axios.post(`https://ecomereceapi.onrender.com/api/v1/users/reset_password/${token}`, data);
+      const response = await axios.post(`${Api}/users/reset_password/${token}`, data);
       if (response.status === 200) {
         alert('Contraseña actualizada correctamente.');
       }

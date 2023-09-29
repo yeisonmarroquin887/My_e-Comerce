@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import getConfingToken from '../../../utils/getConfingToken';
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const Images = () => {
   const [images, setImages] = useState([]);
@@ -20,7 +21,7 @@ const Images = () => {
     });
 
     try {
-      const response = await axios.post('https://ecomereceapi.onrender.com/api/v1/product_images/product/17', formData, getConfingToken());
+      const response = await axios.post(`${Api}/product_images/product/17`, formData, getConfingToken());
 
       if (response.status === 201) {
         setImages(response.data);

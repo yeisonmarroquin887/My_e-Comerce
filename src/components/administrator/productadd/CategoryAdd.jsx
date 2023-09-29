@@ -2,9 +2,10 @@ import React from 'react'
 import useAddproduct from '../../../hooks/useAddproduct'
 import { useForm } from 'react-hook-form'
 import deafaultRegisterValues from '../../../utils/deafaultRegisterValues'
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const CategoryAdd = ( {categoryClose} ) => {
-  const url = 'https://ecomereceapi.onrender.com/api/v1/categoris'
+  const url = `${Api}/categoris`
   
   const {creatProduct} = useAddproduct(url)
   const {register, handleSubmit, reset} = useForm()

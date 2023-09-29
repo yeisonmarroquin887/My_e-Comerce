@@ -1,6 +1,7 @@
 import axios from "axios"
 import getConfingToken from "../utils/getConfingToken"
 import { useState } from "react";
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const useAddproduct = (url) => {
 const [productId, setproductId] = useState()
@@ -13,7 +14,7 @@ const [ImgsId, setImgsId] = useState()
 
   const incluImg = (formData) => {
     console.log(formData)
-    const imgUrl = `https://ecomereceapi.onrender.com/api/v1/product_images`;
+    const imgUrl = `${Api}/product_images`;
     axios.post(imgUrl,formData,getConfingToken())
     .then(res => setImgsId(res.data))
     .catch(err => console.log(err))

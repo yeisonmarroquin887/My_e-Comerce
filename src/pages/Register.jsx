@@ -6,6 +6,7 @@ import "./style/register.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../components/shared/Header";
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const Register = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -15,7 +16,7 @@ const Register = () => {
   useEffect(() => {
     const fetchAdminList = async () => {
       try {
-        const response = await axios.get("https://ecomereceapi.onrender.com/api/v1/users/admins");
+        const response = await axios.get(`${Api}/users/admins`);
         setAdminList(response.data);
       } catch (error) {
         console.error("Error fetching admin list:", error);

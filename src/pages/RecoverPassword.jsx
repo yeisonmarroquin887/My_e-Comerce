@@ -3,6 +3,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import './style/recoverpassword.css'
 import Header from "../components/shared/Header";
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const RecoverPassword = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -11,7 +12,7 @@ const RecoverPassword = () => {
   const submit = (data) => {  
      data.frontBaseUrl='https://keen-fudge-5ae06d.netlify.app/#'
     console.log(data)
-    const url = 'https://ecomereceapi.onrender.com/api/v1/users/reset_password'
+    const url = `${Api}/users/reset_password`
     axios.post(url, data)
     .then(res => console.log(res.data))
     .catch(err => console.log(err))

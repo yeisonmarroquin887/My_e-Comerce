@@ -7,11 +7,12 @@ import SimiliarProducts from "../components/ProductId/SimiliarProducts";
 import "./style/productid.css";
 import Header from "../components/shared/Header";
 import Loading from "../components/Loading/Loading";
+const Api = import.meta.env.VITE_REACT_APP_URL;
 
 const ProductId = () => {
   const { id } = useParams();
 
-  const url = `https://ecomereceapi.onrender.com/api/v1/products/${id}`;
+  const url = `${Api}/products/${id}`;
 
   const [Product, getProductById] = useFetch(url);
 
