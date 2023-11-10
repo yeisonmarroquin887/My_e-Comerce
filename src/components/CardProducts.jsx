@@ -13,6 +13,12 @@ const CardProducts = ({ product }) => {
   const HandelSelectProduct = () => {
          navigate(`/product/${product.id}`)
   }
+  const handelWhass = (e) => {
+    e.stopPropagation()
+    const productTitle = encodeURIComponent(product.title);
+    const message = encodeURIComponent(`Hola, quiero información del producto ${productTitle}. Me interesa comprarlo.\n\nInformación desde el E-Commerce de Yeison Marroquin y Carlos Marroquin`);
+    window.open(`https://wa.me/573227222010?text=${message}`, "_blank");
+  }
 
   const purchaseSeguryti = (e) => {
     if(localStorage.getItem('token')){
@@ -59,6 +65,9 @@ const CardProducts = ({ product }) => {
         </div>
         <button onClick={purchaseSeguryti} className="CardProduct_btn">
         <i className='bx bxs-cart'></i>
+        </button>
+        <button onClick={handelWhass} className="wha">
+            <i class='bx bxl-whatsapp' ></i>
         </button>
         
         </div>

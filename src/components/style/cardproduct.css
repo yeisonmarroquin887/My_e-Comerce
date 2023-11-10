@@ -74,7 +74,7 @@
     width: 40px;
     aspect-ratio: 1;
     position: absolute;
-    right: 2em;
+    right: 3em;
     bottom: 1.5em;
     font-size: 1.4rem;
     cursor: pointer;
@@ -86,4 +86,19 @@
 }
 .CardProduct_btn:hover{
     filter: brightness(1.2);
+}
+.wha{
+    color: white;
+    background-color: var(--bg-header);
+    width: 40px;
+    aspect-ratio: 1;
+    position: absolute;
+    right: 1em;
+    bottom: 1.5em;
+    font-size: 1.4rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
 }
