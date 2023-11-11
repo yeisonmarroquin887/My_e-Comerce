@@ -1,101 +1,111 @@
-import React, { useEffect, useState } from 'react';
-import { useForm } from 'react-hook-form';
-import useAddproduct from '../../../hooks/useAddproduct';
 import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import getConfingToken from '../../../utils/getConfingToken';
-import defaultformProduct from '../../../utils/defaultformProduct';
-import './addproduct.css'
+import { useForm } from 'react-hook-form';
 const Api = import.meta.env.VITE_REACT_APP_URL;
+import './addproduct.css'
 
 const Productadd = () => {
-  const [images, setImages] = useState([]);
-  const [Category, setCategory] = useState([])
+  const [imagenes, setImagenes] = useState([]);
+  const [Category, setCategory] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('');
-  const url = `${Api}/products`;
-  const { creatProduct, incluImg, productId, ImgsId } = useAddproduct(url);
-  const { register, handleSubmit, reset } = useForm();
+  const [ProductId, setProductId] = useState('');
 
-  const IdProduct = productId?.id;
-  const setUrl = `${Api}/products/${IdProduct}/images`
-  const IdImgs = ImgsId?.map(id => (
-    id.id
-  ))
-  axios.post(setUrl, IdImgs, getConfingToken())
-  .then(res => console.log(res.data))
-  .catch(err => err)
 
-  const img = (e) => {
-    const files = e.target.files;
-    setImages([...images, ...files]);
+
+  const handleImage = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const formData = new FormData();
+      formData.append('image', file);
+
+      const url = `${Api}/product_images`;
+      axios.post(url, formData, getConfingToken())
+        .then(res => {
+          setImagenes(prevImagenes => [...prevImagenes, res.data.id]);
+        })
+        .catch(err => console.log(err));
+    }
   };
+
+  useEffect(() => {
+    const categoryUrl = `${Api}/categoris`;
+    axios.get(categoryUrl)
+      .then(res => setCategory(res.data))
+      .catch(err => console.log(err));
+  }, []);
+
+  const { handleSubmit, register, reset } = useForm();
 
   const submit = (data) => {
-    data.categoryId = parseInt(selectedCategory, 10)
+    data.categoryId = selectedCategory;
+    if(imagenes.length >= 3 || imagenes.length < 4){
+          const urlProducts = `${Api}/products`;
 
-      // Enviar imágenes al backend
-      const formData = new FormData();
-      images.forEach((image) => {
-        formData.append('images', image);
-      });
-      if(images.length === 3 && selectedCategory){
-        creatProduct(data)
-        incluImg(formData) 
-        reset(defaultformProduct)
-        alert("Producto Creado")
-      }else{
-         alert("te faltan datos, ingresa lo que te pide")
-         reset(defaultformProduct)
-      }
-   
-      
+    axios.post(urlProducts, data, getConfingToken())
+      .then((res) => {
+        setProductId(res.data);
+        reset()
+      })
+      .catch((err) => console.log(err));
+    }else{
+      alert("Debes se seleccionar solo 3 imagenes")
+      reset()
+    }
+
   };
-  useEffect(()=>{
-      const categoryUrl = `${Api}/categoris`
-  axios.get(categoryUrl)
-  .then(res => setCategory(res.data))
-  .catch(err => console.log(err))
-  },[])
 
-
+  useEffect(() => {
+    if (ProductId && imagenes.length > 0) {
+      const urlSetImg = `${Api}/products/${ProductId.id}/images`;
+      axios.post(urlSetImg, imagenes, getConfingToken())
+        .then(res => {
+          console.log(res.data);
+          reset();
+          // Aquí restableces ProductId a un estado vacío
+          setProductId(null); 
+          setImagenes([])
+        })
+        .catch(err => console.log(err));
+    }
+  }, [ProductId, imagenes]);
   
 
   return (
-<div class="form-container">
-  <form action="" onSubmit={handleSubmit(submit)}>
-    <div>
-      <label className="form-label" htmlFor="imgs">Ingresa tres imágenes</label>
-      <input className="form-input form-file" type="file" multiple onChange={img} />
+<div className="form-container">
+  <form onSubmit={handleSubmit(submit)} className="product-form">
+    <div className="form-group">
+      <label htmlFor="image" >Ingresa las 3 imágenes</label>
+      <input className="form-control image_c" onChange={handleImage} type="file" id="image" required />
     </div>
-    <div>
+    <div className="form-group">
       <label className="form-label" htmlFor="cate">Elige la categoría del producto</label>
-      <select className="form-input form-select" id="cate" onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory}>
+      <select className="form-input form-select" id="cate" onChange={(e) => setSelectedCategory(e.target.value)} value={selectedCategory} required>
         <option value="" disabled>Elige la Categoría</option>
         {
-           Category.map(categoris => (
-            <option key={categoris.id} value={categoris.id}>{categoris.name}</option>
-           ))
+          Category.map(categories => (
+            <option key={categories.id} value={categories.id}>{categories.name}</option>
+          ))
         }
       </select>
     </div>
-    <div>
-      <label className="form-label" htmlFor="title">Nombre del Producto</label>
-      <input className="form-input" type="text" id="title" {...register('title')} required />
+    <div className="form-group">
+      <label htmlFor="title">Ingresa el nombre del producto</label>
+      <input {...register("title")} className="form-control" type="text" id="title" required />
     </div>
-    <div>
-      <label className="form-label" htmlFor="des">Descripción del Producto</label>
-      <textarea className="form-input" id="des" {...register('description')} rows="6" required></textarea>
+    <div className="form-group">
+      <label htmlFor="description">Ingresa la descripción del producto</label>
+      <input {...register("description")} className="form-control" type="text" id="description" required />
     </div>
-    <div>
-      <label className="form-label" htmlFor="price">Precio del Producto</label>
-      <input className="form-input" type="number" id="price" {...register('price')} required />
+    <div className="form-group">
+      <label htmlFor="price">Ingresa el precio del producto</label>
+      <input {...register("price")} className="form-control" type="number" id="price" required />
     </div>
-    <button className="form-button" type="submit">Crear</button>
+    <button className="submit-btn">Ingresar</button>
   </form>
 </div>
-
-
   );
 };
 
 export default Productadd;
-

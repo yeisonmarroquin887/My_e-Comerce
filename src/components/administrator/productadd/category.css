@@ -1,0 +1,63 @@
+.categorya {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #f9f9f9;
+  }
+  
+  .categorya button {
+    background-color: #db3434;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 1em;
+  }
+  
+  .categorya button:hover {
+    background-color: #2980b9;
+  }
+  
+  .categorya form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .categorya div {
+    margin-bottom: 15px;
+  }
+  
+  .categorya label {
+    margin-bottom: 5px;
+    display: block;
+    font-weight: bold;
+  }
+  
+  .categorya input {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .categorya button[type="submit"] {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .categorya button[type="submit"]:hover {
+    background-color: #27ae60;
+  }
+  

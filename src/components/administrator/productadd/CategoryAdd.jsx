@@ -3,6 +3,7 @@ import useAddproduct from '../../../hooks/useAddproduct'
 import { useForm } from 'react-hook-form'
 import deafaultRegisterValues from '../../../utils/deafaultRegisterValues'
 const Api = import.meta.env.VITE_REACT_APP_URL;
+import './category.css'
 
 const CategoryAdd = ( {categoryClose} ) => {
   const url = `${Api}/categoris`
@@ -15,7 +16,7 @@ const CategoryAdd = ( {categoryClose} ) => {
   }
    
   return (
-    <div>
+    <div className='categorya'>
       <button onClick={categoryClose}>Cerrar</button>
         <form onSubmit={handleSubmit(submit)}>
             <div>
