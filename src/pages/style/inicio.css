@@ -15,11 +15,11 @@
     background-size: cover;
     background-position: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 4px rgb(0, 0, 0);
   }
   
   .tex_w {
-    background-color: rgba(44, 21, 23, 0.397);
+    background-color: rgba(243, 237, 238, 0.452);
     width: 100%;
     display: flex;
     flex-direction: column;

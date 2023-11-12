@@ -1,7 +1,5 @@
 /* admin.css */
-.login-admin{
-  position: relative;
-}
+
 .login-form {
     display: flex;
     flex-direction: column;

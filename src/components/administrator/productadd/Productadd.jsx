@@ -34,7 +34,7 @@ const Productadd = () => {
     axios.get(categoryUrl)
       .then(res => setCategory(res.data))
       .catch(err => console.log(err));
-  }, []);
+  }, [Category]);
 
   const { handleSubmit, register, reset } = useForm();
 
@@ -63,7 +63,6 @@ const Productadd = () => {
         .then(res => {
           console.log(res.data);
           reset();
-          // Aquí restableces ProductId a un estado vacío
           setProductId(null); 
           setImagenes([])
         })

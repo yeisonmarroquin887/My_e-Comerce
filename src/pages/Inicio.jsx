@@ -17,7 +17,7 @@ const Inicio = () => {
 <div className="welcome-container">
   <div className='tex_w'>
       <div className="welcome-text">
-    <h1>Bienvenido a nuestra empresa Recarga Movil</h1>
+    <h1>Bienvenid@ a nuestra empresa Click</h1>
     <p>Explora una amplia gama de productos <br /> de alta calidad para comprar y recibir en la puerta de tu casa. <br /> <br /> Elige tu rol para acceder: <br /> <br />
     <b>Cliente:</b> Descubre ofertas exclusivas y una experiencia de compra única.</p>
     

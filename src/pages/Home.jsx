@@ -4,14 +4,13 @@ import CardProducts from '../components/CardProducts'
 import './style/home.css'
 import FilterCategory from '../components/Home/FilterCategory'
 import FilterByPrice from '../components/Home/FilterByPrice'
-import { Link } from 'react-router-dom'
 import Header from '../components/shared/Header'
 import Loading from '../components/Loading/Loading'
 
 const Home = () => {
    const {productsGlobal} = useSelector(state => state)
-
    const [InputValue, setInputValue] = useState('')
+
 
    const [FromTo, setFromTo] = useState({
     from:0,
@@ -59,7 +58,7 @@ const Home = () => {
    const [Isloanding, setIsloanding] = useState(false);
 
    setTimeout(() => {
-     setIsloanding(true);
+     setIsloanding(productsGlobal.length >= 1);
    }, 1000);
 
   return  (
@@ -80,7 +79,7 @@ const Home = () => {
       <div className='Home'>
         <div className={`Home_filter ${Cambio && 'Home_filter-close'}`}>
           <div onClick={handelVolver} className='Volver'>
-          <i class='bx bx-chevrons-left'></i>
+          <i className='bx bx-chevrons-left'></i>
           </div>
           <FilterCategory/>
           <FilterByPrice setFromTo={setFromTo}/>
