@@ -67,7 +67,7 @@ const CardProducts = ({ product }) => {
         <i className='bx bxs-cart'></i>
         </button>
         <button onClick={handelWhass} className="wha">
-            <i class='bx bxl-whatsapp' ></i>
+            <i className='bx bxl-whatsapp' ></i>
         </button>
         
         </div>

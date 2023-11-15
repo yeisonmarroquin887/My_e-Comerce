@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import getConfingToken from '../utils/getConfingToken';
 import Users from '../components/administrator/Users';
 import './style/admin.css';
@@ -57,7 +57,10 @@ const Administrator = () => {
     const categoryClose = () => {
       setCategory(true)
    }
-
+   
+   const Ventas = () => {
+      navigate('/ventas')
+   }
 
   return (
     <div className='admin'>
@@ -67,6 +70,7 @@ const Administrator = () => {
     <button className='buttonC' onClick={handleCambio}>Clientes</button>
     <button className='buttonC' onClick={addCambi}>Crear Producto</button>
     <button className='buttonC' onClick={category}>Crear Category</button>
+    <button className='buttonC' onClick={Ventas}>Registros de compras</button>
 
     
   

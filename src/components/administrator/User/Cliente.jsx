@@ -10,7 +10,7 @@ const Cliente = ({ datos }) => {
   };
 
   return (
-    <div className='Cliente'> {/* Agregado un contenedor para toda la pantalla */}
+    <div className='Cliente'>
       <div className='Clientes'>
         <h1>Nombre</h1>
         <h3>
@@ -24,12 +24,12 @@ const Cliente = ({ datos }) => {
       </div>
 
       {showCompras && (
-        <div className='ComprasOverlay'> {/* Contenedor para las compras */}
-          <div className='ComprasContainer'> {/* Contenedor para el contenido de compras */}
+        <div className='ComprasOverlay'> 
+          <div className='ComprasContainer'>
             <button className='CerrarCompras' onClick={toggleCompras}>
               Cerrar
             </button>
-            <Compras compras={datos.purchases} />
+            <Compras key={datos.id} compras={datos.purchases} />
           </div>
         </div>
       )}

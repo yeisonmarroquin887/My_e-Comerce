@@ -17,7 +17,7 @@ const HeaderAdmin = () => {
   
     return (
       <header className='Heade'>
-          <h1 className='Heade_h1'><Link to='/home'> <img className='header_img' src="../images/Logo-header.jpg" alt="" /> </Link></h1>
+          <h1 className='Heade_h1'><Link to='/loginadmin'> <img className='header_img' src="../images/Logo-header.jpg" alt="" /> </Link></h1>
            <div onClick={handelClose} className='Heade_menu'>
             <i className='bx bx-menu'></i>
            </div>

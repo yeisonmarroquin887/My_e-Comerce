@@ -19,6 +19,7 @@ const Compras = ({ compras }) => {
     0
   );
 
+
   return (
     <div className='Compras'>
       <h2 className='h'>Compras del Usuario</h2>

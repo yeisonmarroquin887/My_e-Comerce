@@ -6,7 +6,7 @@ const Users = ({ user }) => {
   return (
     <div className="Users">
       {user.users?.map((cliente) => (
-        <Cliente id={cliente.id} datos={cliente} />
+        <Cliente key={cliente.id} id={cliente.id} datos={cliente} />
       ))}
     </div>
   );

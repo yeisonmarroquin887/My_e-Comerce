@@ -79,6 +79,14 @@
    left: 4.7em;
    cursor: pointer;
 }
+.intro {
+    display: flex;
+    padding: 0em 1em 0em 1em;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 400;
+    color: #999;
+}
 @media (min-width: 700px) {
     .Home{
         padding: 2em;
@@ -160,5 +168,13 @@
        margin-top: -2em;
        left: 4.7em;
        cursor: pointer;
+    }
+    .intro {
+        display: flex;
+        padding: 0em .5em 0em 13em;
+        text-align: start;
+        font-size: 18px;
+        font-weight: 400;
+        color: #999;
     }
 }

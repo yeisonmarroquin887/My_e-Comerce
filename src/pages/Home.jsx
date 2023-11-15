@@ -74,7 +74,7 @@ const Home = () => {
       <div className='Home_input'>
         <label className='Home_label' htmlFor="bus">Aqui puedes buscar en tiempo real <br /> el producto que desees por nombre😀</label>
         <input className='Home_in' id='bus' ref={input} onChange={handleChange} type="text" />
-      
+      <h2 className='intro'>Puedes realizar la compra por WhatsApp dando clic en el segundo botón del producto. Y para efectuar la compra con registro en nuestra plataforma, haz clic en el segundo botón.</h2>
       </div>
       <div className='Home'>
         <div className={`Home_filter ${Cambio && 'Home_filter-close'}`}>

@@ -1,0 +1,59 @@
+.RegisterVolver {
+    background-color: var(--bg-header);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    position: fixed;
+    margin-top: -3em;
+}
+
+.Register_From {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.Register_From div {
+    margin-bottom: 15px;
+}
+
+.Register_From label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.Register_From input {
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 3px;
+}
+
+.Register_From > button {
+    background-color: var(--bg-header-li);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+@media (min-width: 700px) {
+    .RegisterVolver {
+        background-color: var(--bg-header);
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 20px;
+        position: fixed;
+        margin-top: 0em;
+        margin-left: 15em;
+    }
+    
+}

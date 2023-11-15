@@ -1,0 +1,55 @@
+/* Estilos para la sección de ventas */
+.button_Register-venta{
+    background-color: var(--bg-header);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+    margin-top: 1em;
+    margin-left: 44.5%;
+    margin-right: -50%;
+}
+.Venta {
+    margin: 20px;
+}
+
+/* Estilos para la tabla de ventas */
+.Venta_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.primera_fila{
+    background-color: var(--bg-header-li);
+    color: var(--light-white);
+    height: 3em;
+}
+.segunda_fila {
+    color: var(--bg-header-li);
+    font-weight: 700;
+    height: 1em;
+}
+
+/* Estilos para las celdas de la tabla */
+.Venta_table td, .Venta_table th {
+    border: 1px solid var(--light-white);
+    text-align: center;
+    padding: 8px;
+}
+
+/* Estilo de encabezado de la tabla */
+.Venta_table th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos alternos para filas de la tabla */
+.Venta_table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Estilo de hover para resaltar filas al pasar el ratón */
+.Venta_table .Ventas_products:hover {
+    background-color: #e5e5e5;
+}

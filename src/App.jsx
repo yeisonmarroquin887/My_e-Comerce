@@ -18,6 +18,8 @@ import UpdatePassword from './pages/UpdatePassword'
 import Inicio from './pages/Inicio'
 import LoginAdmin from './pages/LoginAdmin'
 import Administrator from './pages/Administrator'
+import Venta from './pages/Venta'
+import RegisterVenta from './pages/RegisterVenta'
 
 function App() {
  const dispath = useDispatch()
@@ -39,11 +41,12 @@ function App() {
         <Route path='/product/:id' element={<ProductId/>}/>
         <Route path='/reset_password' element={<RecoverPassword/>}/>
         <Route path='/reset_password/:token' element={<UpdatePassword/>}/>
-
         <Route element={<ProtectedRoutes />}>
         <Route path='/logeado' element={<Logeado/>}/>
-               <Route path='/cart' element={<Cart/>}/>
+        <Route path='/cart' element={<Cart/>}/>
         <Route path='/purchases' element={<Purchases/>}/>
+        <Route path='/ventas' element={<Venta/>}/>
+        <Route path='/RegisterVentas' element={<RegisterVenta/>}/>
         </Route>
    
         

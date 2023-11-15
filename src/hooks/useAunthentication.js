@@ -6,8 +6,14 @@ const useAunthentication = () => {
   const createNewUser = (data) => {
     const url = `${Api}/users`;
     axios.post(url, data)
-    .then(res => console.log(res.data))
-    .catch(err => console.log(err))
+    .then(res => {
+      console.log(res)
+      alert("Usuario Creado")
+    })
+    .catch(err => {
+      console.log(err)
+      alert("Datos incorrectos")
+    })
   };
 
     const [user, setUser] = useSetState()
@@ -21,7 +27,10 @@ const useAunthentication = () => {
         localStorage.setItem('name', res.data.user.firstName)
         setUser(res.data)
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log(err)
+      alert("Datos incorrectos")
+    })
   }; 
   console.log(user)
 
