@@ -21,7 +21,11 @@ const CardProducts = ({ product }) => {
   }
 
   const purchaseSeguryti = (e) => {
-    if(localStorage.getItem('token')){
+    if(true){
+      e.stopPropagation()
+      alert("Actualmente, nuestra plataforma no está disponible para realizar compras directamente en ella. Por favor, haga clic en el icono de WhatsApp para llevar a cabo su compra. Agradecemos su comprensión y atención.")
+    }else{
+         if(localStorage.getItem('token')){
        
     e.stopPropagation()
     const data = {
@@ -35,6 +39,8 @@ const CardProducts = ({ product }) => {
       e.stopPropagation()
       navigate('/login')
     }
+    }
+ 
   }
 
   
