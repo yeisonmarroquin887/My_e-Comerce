@@ -15,18 +15,32 @@
     background-size: cover;
     background-position: center;
     color: white;
-    text-shadow: 2px 2px 4px rgb(0, 0, 0);
+    
   }
-  
-  .tex_w {
-    background-color: rgba(243, 237, 238, 0.452);
+  .rol{
+    padding: 10px;
+  }
+  .rol > h1{
+   color: #b6b2b2;
+   text-shadow: 2px 2px 4px #a00b0bd5;
+  }
+  .rol > p {
+    color: #948b8b;
+    text-shadow: 2px 2px 4px rgb(126, 64, 64);
+  }
+  .rol > h3 {
+    color: #bdb8b8;
+    text-shadow: 2px 2px 4px #a00b0bef;
+  }
+  .text {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     padding: 10px;
+    bottom: 4em;
+    background-color: rgba(0, 0, 0, 0.644);
   }
+
   
   .welcome-text {
     margin-bottom: 20px;
@@ -39,32 +53,120 @@
     margin-bottom: 15px;
     letter-spacing: 1px;
   }
+  .Roles{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    width: 100%;
+    max-width: 30em;
+    margin: auto;
+  }
   
   .role-button {
-    background-color: #a00b0b;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 18px;
+    background-color: #a00b0bc0;
+    font-size: 4.5em;
+    border-radius: .1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid rgb(150, 144, 144);
+    color: #bbb4b4;
     cursor: pointer;
-    margin: 10px 15px;
-    transition: background-color 0.3s ease-in-out;
+    padding: .1em;
+  }
+  .role-button > h1{
+    font-size: .2em;
   }
   
   .role-button:hover {
     background-color: #ff3355;
   }
+  .fin{
+    font-size: 14px;
+    color: #948b8b;
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
   
   /* Media query para ajustar el diseño en dispositivos móviles */
-  @media screen and (max-width: 480px) {
-    .welcome-text h1 {
-      font-size: 20px;
+ @media (min-width: 700px)  {
+    .text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 0em;
+      background-color: rgba(0, 0, 0, 0.644);
+    }
+    .rol{
+      padding: 1em;
+      width: 100%;
+      max-width: 34em;
+      margin: auto;
+      font-size: 1.3em;
+    }
+    .rol > h1{
+     color: #b6b2b2;
+     text-shadow: 2px 2px 4px #a00b0bd5;
+    }
+    .rol > p {
+      color: #948b8b;
+      text-shadow: 2px 2px 4px rgb(126, 64, 64);
+    }
+    .rol > h3 {
+      color: #bdb8b8;
+      text-shadow: 2px 2px 4px #a00b0bef;
     }
   
+    
+    .welcome-text {
+      margin-bottom: 20px;
+      text-align: center;
+      width: 100%;
+    }
+    
+    .welcome-text h1 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+    .Roles{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      width: 100%;
+      max-width: 30em;
+      margin: auto;
+    }
+    
     .role-button {
-      font-size: 16px;
-      padding: 10px 20px;
+      background-color: #a00b0bc0;
+      font-size: 8em;
+      border-radius: .1em;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border: 5px solid rgb(150, 144, 144);
+      color: #bbb4b4;
+      padding: .1em;
+    }
+    .role-button > h1{
+      font-size: .2em;
+    }
+    
+    .role-button:hover {
+      background-color: #751116;
+    }
+    .fin{
+      font-size: 14px;
+      color: #948b8b;
+      text-align: center;
+      margin-top: 3em;
+      margin-bottom: 3em;
     }
   }
   

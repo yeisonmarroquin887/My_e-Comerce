@@ -20,7 +20,7 @@ const SimiliarProducts = ({product}) => {
 
   return (
     <section className='SimiliarProduct'>
-        <h2>Discover similar products</h2>
+        <h2>Productos similares</h2>
         <div className='SimiliarProduct__products'>
           {
             filterProducts?.map(prod => {

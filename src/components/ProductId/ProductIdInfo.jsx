@@ -7,7 +7,6 @@ const ProductIdInfo = ({product}) => {
     const [quantity, setQuantity] = useState(1)
 
     const { addProductToCart } = useCrudCart()
-    console.log(addProductToCart.quantity)
 
     const handelAdd = () => {
         setQuantity(quantity + 1)
@@ -20,13 +19,22 @@ const ProductIdInfo = ({product}) => {
     }
 
     const handleAddToCart = () => {
-        const data = {
+        if(true){
+            alert("Actualmente, nuestra plataforma no está disponible para realizar compras directamente en ella. Por favor, haga clic en el icono de WhatsApp para llevar a cabo su compra. Agradecemos su comprensión y atención.")
+        }else{
+             const data = {
             quantity,
             productId: product.id
+        }  
         }
+      
+     
         addProductToCart(data)
     }
-
+     const handlewhas = () => {
+        const message = encodeURIComponent(`Hola, quiero información del producto ${product.title}. Me interesa comprarlo.\n\nInformación desde el E-Commerce de Yeison Marroquin y Carlos Marroquin`);
+        window.open(`https://wa.me/573227222010?text=${message}`, "_blank");
+     }
 
   return (
     <section className='ProductInfo'>
@@ -49,7 +57,7 @@ const ProductIdInfo = ({product}) => {
         </div>
         </div>
      
-        <button onClick={handleAddToCart} className='ProductInfo_button'>Add to cart<i className='cart_btnn bx bxs-cart-download'></i></button>
+        <button onClick={handlewhas} className='ProductInfo_button'>Add to cart<i className='cart_btnn bx bxs-cart-download'></i></button>
      </footer>
     </section>
   )

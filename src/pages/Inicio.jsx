@@ -15,19 +15,25 @@ const Inicio = () => {
 
   return (
 <div className="welcome-container">
+  <section className='text'>
+      <div className='rol'>
+     <h1>Bienvenid@ a  Click</h1>
+     <p>Explora una amplia gama de productos
+de alta calidad para comprar y recibir en la puerta de tu casa.</p>
+
+<h3>Elige tu rol:</h3>
+  </div>
+ 
   <div className='tex_w'>
-      <div className="welcome-text">
-    <h1>Bienvenid@ a nuestra empresa Click</h1>
-    <p>Explora una amplia gama de productos <br /> de alta calidad para comprar y recibir en la puerta de tu casa. <br /> <br /> Elige tu rol para acceder: <br /> <br />
-    <b>Cliente:</b> Descubre ofertas exclusivas y una experiencia de compra única.</p>
-    
+  <div className='Roles'>
+     <nav className="role-button" onClick={handelrol2}><i class='bx bxs-user-circle'></i><h1>Administrador</h1></nav>
+  <nav className="role-button" onClick={handelrol1}><i class='bx bxs-user-account'></i><h1>Clientes</h1></nav>
   </div>
-  <div>
-     <button className="role-button" onClick={handelrol2}>Administrador</button>
-  <button className="role-button" onClick={handelrol1}>Cliente</button>
   </div>
-  <p>¡Disfruta de tus compras en línea con nosotros!</p>
-  </div>
+  <h2 className='fin'>¡Disfruta de tus compras en línea con nosotros!</h2>
+  </section>
+
+
 
 </div>
 

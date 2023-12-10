@@ -16,6 +16,7 @@ export const {setProductsGlobal} = ProductSlice.actions
 
 export const getAllproductsThunk = (Url = `${Api}/products`) => dispatch => {
     axios.get(Url)
-    .then(res => dispatch(setProductsGlobal(res.data)))
+    .then(res => {dispatch(setProductsGlobal(res.data))
+    console.log(res.data)})
     .catch(err => console.log(err))
 }
