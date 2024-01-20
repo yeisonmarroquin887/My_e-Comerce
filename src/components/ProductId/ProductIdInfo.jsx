@@ -44,8 +44,8 @@ const ProductIdInfo = ({product}) => {
      <footer className='ProductInfo_footer'>
         <div className='ProductInfo_purchase'>
                <div className='ProductInfo_efect'>
-            <span className='ProductInfo_subprice'>Price</span>
-            <span className='ProductInfo_price'>${product?.price}</span>
+            <span className='ProductInfo_subprice'>Price:</span>
+            <span className='ProductInfo_price'>   <span className='ProductInfo_Aprice'>${Number(product.AnterPrice).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span> <br />  ${Number(product.price).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
         </div>
         <div className='ProductInfo_quantity'>
             <span className='ProductInfo_subprice'>Quantity</span>

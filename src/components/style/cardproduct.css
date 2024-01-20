@@ -60,13 +60,30 @@
     font-size: 1em;
     font-weight: 700;
 }
+.CardProduct_Aprice-label{
+    color: var(--bg-header);
+    font-weight: 700;
+    font-size: 11px;
+}
+.CardProduct_Aprice-value{
+    text-decoration: line-through;
+    color: var(--bg-header);
+    text-decoration-color: var(--bg-header);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
 .CardProduct_price{
     display: flex;
     flex-direction: column;
 }
 .CardProduct_price-label{
-    color: #999;
-    font-size: 0.9rem;
+    color: var(--bg-header);
+    font-size: 12px;
+    font-weight: 700;
+}
+.CardProduct_price-value{
+    font-size: 20px;
+    font-weight: 500;
 }
 .CardProduct_btn{
     color: white;

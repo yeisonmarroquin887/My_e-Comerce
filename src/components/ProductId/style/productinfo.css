@@ -3,6 +3,7 @@
 }
 .ProductInfo_title{
     margin-left: 0.5em;
+    color: var(--bg-header);
 }
 .ProductInfo_purchase{
     display: flex;
@@ -10,10 +11,16 @@
 }
 .ProductInfo_efect{
     display: grid;
-    gap: 1em;
+    gap: .5em;
 }
 .ProductInfo_subprice{
-    color: #D9D9D9;
+    color: var(--bg-header);
+    font-weight: 700;
+}
+.ProductInfo_Aprice{
+    text-decoration: line-through;
+    color: var(--bg-header);
+    font-size: 12px;
 }
 .ProductInfo_price{
     font-weight: 700;

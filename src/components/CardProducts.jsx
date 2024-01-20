@@ -66,8 +66,12 @@ const CardProducts = ({ product }) => {
             
         </section>
         <div className="CardProduct_price">
-          <span className="CardProduct_price-label">Price</span>
-          <span className="CardProduct_price-value">{product.price}</span>
+          <span className="CardProduct_Aprice-label">Antes:</span>
+          <span className="CardProduct_Aprice-value">{Number(product.AnterPrice).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+        </div>
+        <div className="CardProduct_price">
+          <span className="CardProduct_price-label">Ahora:</span>
+          <span className="CardProduct_price-value">{Number(product.price).toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
         </div>
         <button onClick={purchaseSeguryti} className="CardProduct_btn">
         <i className='bx bxs-cart'></i>

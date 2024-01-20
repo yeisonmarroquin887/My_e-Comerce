@@ -98,7 +98,11 @@ const Productadd = () => {
       <input {...register("description")} className="form-control" type="text" id="description" required />
     </div>
     <div className="form-group">
-      <label htmlFor="price">Ingresa el precio del producto</label>
+      <label htmlFor="AnterPrice">Ingresa el precio anterior del producto</label>
+      <input {...register("AnterPrice")} className="form-control" type="number" id="AnterPrice" required />
+    </div>
+    <div className="form-group">
+      <label htmlFor="price">Ingresa el precio actual del producto</label>
       <input {...register("price")} className="form-control" type="number" id="price" required />
     </div>
     <button className="submit-btn">Ingresar</button>
