@@ -46,7 +46,7 @@ const CardProducts = ({ product }) => {
   
   return (
     <div className="CardProduct">
-            <article onClick={HandelSelectProduct} className="CardProduct">
+            <article onClick={HandelSelectProduct} >
 
         
             

@@ -37,3 +37,16 @@ input{
     border: none;
     background-color: rgb(222, 222, 236);
 }
+::-webkit-scrollbar{
+    width: 15px;
+}
+::-webkit-scrollbar-track{
+    background-color: var(--bg-header-li);
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--bg-header);
+    border-radius: 20em;
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color: #6e0404;
+}
