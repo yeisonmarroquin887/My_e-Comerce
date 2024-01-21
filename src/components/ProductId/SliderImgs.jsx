@@ -20,7 +20,6 @@ const [NumberImg, setNumberImg] = useState(0)
     }
   }
 
-  console.log(product)
 
   return (
     <div className='sliderimgs'>

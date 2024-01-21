@@ -4,6 +4,7 @@
     position: relative;
     overflow: hidden;
   align-items: center;
+  
 }
 .sliderimgs_interior{
   display: flex;
@@ -40,15 +41,17 @@
 .slider_right{
     right: 0;
 }
+
+
 @media (min-width:800px) {
     .sliderimgs{
-    width: 180em;
+    width: 200em;
     max-width: 500px;
     position: relative;
     overflow: hidden;
 }
 .sliderimgs_img_container{
-    padding: 2.5em;
+    padding: 2.1em;
     width: 100%;
     aspect-ratio: 1.5;
 }
