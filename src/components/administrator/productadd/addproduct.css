@@ -10,6 +10,7 @@
   justify-content: center;
   height: 100vh;
   gap: 1em;
+  overflow-y: scroll;
 }
 .mm > button {
   background-color: rgb(201, 3, 3);

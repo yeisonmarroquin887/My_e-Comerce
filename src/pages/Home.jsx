@@ -6,6 +6,9 @@ import FilterCategory from '../components/Home/FilterCategory'
 import FilterByPrice from '../components/Home/FilterByPrice'
 import Header from '../components/shared/Header'
 import Loading from '../components/Loading/Loading'
+import Perfil from '../components/Perfil'
+import NoLogeado from '../components/NoLogeado'
+import Footer from '../components/Footer/Footer'
 
 const Home = () => {
    const {productsGlobal} = useSelector(state => state)
@@ -60,9 +63,10 @@ const Home = () => {
    setTimeout(() => {
      setIsloanding(productsGlobal.length >= 1);
    }, 1000);
+   const [name, setName] = useState(localStorage.getItem('token'));
 
   return  (
-    <div className=''>
+    <div className='hom'>
     <Header/>
     {
       Isloanding
@@ -78,12 +82,24 @@ const Home = () => {
       </div>
       <div className='Home'>
         <div className={`Home_filter ${Cambio && 'Home_filter-close'}`}>
-          <div onClick={handelVolver} className='Volver'>
-          <i className='bx bx-chevrons-left'></i>
+          <div className='Home_perfil'>
+                     <div className='Volver'>
+            <div  onClick={handelVolver} >
+            <i class='bx bx-x'></i>
+            </div>
           </div>
-          <FilterCategory/>
-          <FilterByPrice setFromTo={setFromTo}/>
-        </div>
+          <nav>
+            {
+              (name)
+              ? (<Perfil name={setName}/>)
+              : (<NoLogeado/>)
+            }
+          </nav>
+          </div>
+               <FilterCategory/>
+               <br />
+               <FilterByPrice setFromTo={setFromTo}/>      
+         </div>
          {
         ProductFilter?.map(product => (
          <CardProducts
@@ -98,7 +114,7 @@ const Home = () => {
     }
 
 
-    
+    <Footer/>
     </div>
   )
 }

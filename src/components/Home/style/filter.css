@@ -1,21 +1,27 @@
 .filter{
-    border-bottom: 1px solid #ccca;
+    border-bottom: 1px solid var(--bg-header);
 }
 .filter_name{
-    color: white;
-    border-bottom: 1px solid rgb(143, 137, 137);
+    color: var(--bg-header);
+    border-bottom: 1px solid var(--bg-header);
+    text-align: center;
 }
 .filter_li{
     cursor: pointer;
     margin-top: 1em;
     text-align: center;
-    color: #e2e4de;
+    color: #5b5c59;
 }
 .filter_li:hover{
-    color: white;
+    color:  var(--bg-header);
 }
 .filter2{
     margin-top: -2em;
+}
+.filter_from{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .filter_fo{
     display: grid;
@@ -23,7 +29,7 @@
     margin-bottom: .6em;
 }
 .filter_label{
-    color: #fcfafa;
+    color: var(--bg-header);
     margin-left: 1em;
 }
 .filter_input{
@@ -33,9 +39,11 @@
     text-align: center;
 }
 .filter_btn{
-    background-color: #9af5f0;
+    background-color: var(--bg-header);
     border-radius: 1em;
     margin-left: .4em;
     color: rgb(150, 139, 139);
     cursor: pointer;
+    
+   margin-bottom: 1em;
 }

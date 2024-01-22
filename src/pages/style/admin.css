@@ -1,5 +1,6 @@
 .admin{
     position: relative;
+    margin: 30px;
 }
 .admin > h1 {
     color: rgb(165, 10, 10);

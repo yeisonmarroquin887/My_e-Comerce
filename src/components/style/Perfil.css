@@ -1,0 +1,81 @@
+.Perfil_User{
+	display: flex;
+	gap: 5px;
+	padding: 10px;
+}
+.Perfil_User i {
+	font-size: 40px;
+}
+.Perfil_User h1 {
+	font-size: 15px;
+	color: rgb(160, 153, 153);
+}
+.Perfil_btn{
+	background-color: rgba(240, 248, 255, 0.021);
+	color: white;
+}
+.Perfil_empre{
+	text-align: center;
+	font-size: 15px;
+	margin-top: -.2em;
+	border-bottom: 1px solid white;
+	width: 100%;
+	max-width: 100px;
+	margin: auto;
+}
+.PerfilIngresar{
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+.PerfilIngresar button {
+	background-color: rgba(250, 235, 215, 0.014);
+	color: white;
+	cursor: pointer;
+}
+@media (min-width: 700px) {
+	.Perfil_User{
+		display: flex;
+		gap: 5px;
+		padding: 10px;
+		align-items: center;
+	}
+	.Perfil_User i {
+		font-size: 80px;
+	}
+	.Perfil_User h1 {
+		font-size: 25px;
+		color: rgb(240, 224, 224);
+	}
+	.Perfil_btn{
+		background-color: rgba(240, 248, 255, 0.021);
+		color: white;
+		cursor: pointer;
+		transition: color 300ms ease, border-bottom 900ms ease;
+	}
+
+.Perfil_btn:hover{
+	color: rgb(121, 113, 153);
+	cursor: pointer;
+	border-bottom: 1px solid rgb(128, 128, 150);
+}
+	.Perfil_empre{
+		text-align: center;
+		font-size: 15px;
+		margin-top: -.2em;
+		border-bottom: 1px solid white;
+		width: 100%;
+		max-width: 100px;
+		margin: auto;
+	}
+	.PerfilIngresar{
+		display: flex;
+		flex-direction: column;
+		gap: 2px;
+	}
+	.PerfilIngresar button {
+		background-color: rgba(250, 235, 215, 0.014);
+		color: white;
+		cursor: pointer;
+	}
+}
