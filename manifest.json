@@ -1,6 +1,6 @@
 {
-  "name": "Mi App",
-  "short_name": "MiApp",
+  "name": "Klickylisto",
+  "short_name": "Klickylisto",
   "description": "Una descripción atractiva de tu aplicación.",
   "start_url": "/",
   "display": "standalone",
