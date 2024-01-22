@@ -1,46 +1,75 @@
-// service-worker.js
+importScripts('https://storage.googleapis.com/workbox-cdn/releases/7.2.1/workbox-sw.js');
 
-const CACHE_NAME = 'mi-cache';
+const CACHE_NAME = 'miapp-cache';
+const dynamicCacheName = 'miapp-dynamic-cache';
+const vapidPublicKey = 'tu-clave-publica-vapid'; 
 
+const staticAssets = [
+  '/',
+  '/index.html',
+  '/otras-rutas',
+  '/manifest.json',
+  // Agrega aquí todos los archivos estáticos que quieres cachear
+];
+
+const wb = new WorkboxSW();
+
+// Estrategia para cachear archivos estáticos
+wb.precache(staticAssets);
+
+// Estrategia para cachear y actualizar dinámicamente otros recursos
+wb.router.registerRoute(
+  /\.(?:png|gif|jpg|jpeg|svg)$/,
+  wb.strategies.cacheFirst({
+    cacheName: dynamicCacheName,
+    plugins: [
+      new wb.expiration.Plugin({
+        maxEntries: 50,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // Cache durante 30 días
+      }),
+    ],
+  })
+);
+
+// Estrategia para cachear y actualizar dinámicamente las solicitudes a la API
+wb.router.registerRoute(
+  '/api/',
+  wb.strategies.networkFirst({
+    cacheName: dynamicCacheName,
+    plugins: [
+      new wb.expiration.Plugin({
+        maxEntries: 50,
+        maxAgeSeconds: 5 * 60, // Cache durante 5 minutos
+      }),
+    ],
+  })
+);
+
+// Estrategia para cachear y actualizar dinámicamente las páginas HTML
+wb.router.registerRoute(
+  ({ event }) => event.request.mode === 'navigate',
+  wb.strategies.networkFirst({
+    cacheName: dynamicCacheName,
+    plugins: [
+      new wb.expiration.Plugin({
+        maxEntries: 10,
+        maxAgeSeconds: 5 * 60, // Cache durante 5 minutos
+      }),
+    ],
+  })
+);
+
+// Manejo de la actualización del Service Worker
 self.addEventListener('install', (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll([
-        '/',
-        '/index.html',
-        '/icon-192x192.png',
-        // Agrega otras rutas de tus recursos aquí
-      ]);
-    })
+    wb.update()
+      .then(() => self.skipWaiting())
   );
 });
 
-self.addEventListener('fetch', (event) => {
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      // Si el recurso está en caché, devuélvelo
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-
-      // Si el recurso no está en caché, realiza la solicitud de red
-      return fetch(event.request).then((response) => {
-        // Verifica que la respuesta sea válida y sea de una solicitud GET
-        if (!response || response.status !== 200 || event.request.method !== 'GET') {
-          return response;
-        }
-
-        // Clona la respuesta para poder almacenarla en caché
-        const responseToCache = response.clone();
-
-        // Abre la caché y almacena la nueva respuesta
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
-
-        // Devuelve la respuesta original al cliente
-        return response;
-      });
-    })
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    wb.clearCaches()
+      .then(() => self.clients.claim())
   );
 });

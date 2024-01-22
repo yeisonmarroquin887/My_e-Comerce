@@ -1,32 +1,21 @@
 {
-    "name": "Klickylisto",
-    "short_name": "Klickylisto",
-    "description": "Explora una amplia gama de productos de alta calidad para comprar y recibir en la puerta de tu casa",
-    "start_url": "/index.html",
-    "display": "standalone",
-    "background_color": "#ffffff",
-    "theme_color": "#000000",
-    "icons": [
-      {
-        "src": "./images/Logo-color.png",
-        "sizes": "192x192",
-        "type": "image/png"
-      },
-      {
-        "src": "./images/Logo-color.png",
-        "sizes": "512x512",
-        "type": "image/png"
-      }
-    ],
-    "splash_pages": null,
-    "prefer_related_applications": false,
-    "related_applications": [],
-    "permissions": [],
-    "shortcuts": [],
-    "serviceworker": {
-      "src": "/service-worker.js",
-      "scope": "/",
-      "type": "classic"
+  "name": "Mi App",
+  "short_name": "MiApp",
+  "description": "Una descripción atractiva de tu aplicación.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/path/to/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/path/to/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
-  }
-  
+  ]
+}
