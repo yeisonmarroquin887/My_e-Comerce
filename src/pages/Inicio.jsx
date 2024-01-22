@@ -17,7 +17,7 @@ const Inicio = () => {
 <div className="welcome-container">
   <section className='text'>
       <div className='rol'>
-     <h1>Bienvenid@ a  Click</h1>
+     <h1>Bienvenid@ a  Klickylisto</h1>
      <p>Explora una amplia gama de productos
 de alta calidad para comprar y recibir en la puerta de tu casa.</p>
 
